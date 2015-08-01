@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ua.com.dog.hotel.model.order">
+    <class name="Order" table="orders">
+        <id name="id" column="id" type="int">
+            <generator class="increment"/>
+        </id>
+        <property name="roomId" column="room_id"/>
+        <property name="userId" column="user_id"/>
+        <property name="dateCheckIn" column="date_check_in"/>
+        <property name="dateCheckOut" column="date_check_out"/>
+        <property name="bill" column="bill"/>
+    </class>
+</hibernate-mapping>

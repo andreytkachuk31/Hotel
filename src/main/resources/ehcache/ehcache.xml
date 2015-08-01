@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache>
+
+    <cache name="hotelCache"
+           maxElementsInMemory="500"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LFU"
+           eternal="false"/>
+
+</ehcache>
