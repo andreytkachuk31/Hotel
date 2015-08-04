@@ -169,32 +169,6 @@ public final class DBManager {
         return brList;
     }
 
-    public List<Order> selectUserOrders(int userId) {
-        List<Order> userOrders = new ArrayList<Order>();
-        Connection con = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        try {
-            con = getConnection();
-            con.setAutoCommit(false);
-            pstmt = con.prepareStatement("SELECT * FROM orders INNER JOIN users ON users.id = orders.user_id WHERE user_id=?");
-            pstmt.setInt(1, userId);
-            rs = pstmt.executeQuery();
-            while (rs.next()) {
-                userOrders.add(extractOrder(rs));
-            }
-            con.commit();
-        } catch (SQLException ex) {
-            rollback(con);
-            LOG.error("Cannot obtain order items", ex);
-        } finally {
-            close(rs);
-            close(pstmt);
-            close(con);
-        }
-        return userOrders;
-    }
-
     /**
      * Extracts a room entity from the result set.
      *
@@ -232,12 +206,10 @@ public final class DBManager {
 
     private Order extractOrder(ResultSet rs) throws SQLException {
         Order order = new Order();
-        //order.set(rs.getInt("id"));
         order.setRoomId(rs.getInt("room_id"));
         order.setUserId(rs.getInt("user_id"));
         order.setDateCheckIn(rs.getDate("date_arrival"));
         order.setDateCheckOut(rs.getDate("date_check_out"));
-        order.setDateBooking(rs.getDate("date_booking"));
         order.setBill(rs.getInt("bill"));
         return order;
     }

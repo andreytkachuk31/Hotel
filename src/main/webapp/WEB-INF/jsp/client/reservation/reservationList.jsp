@@ -11,11 +11,11 @@
         <div class="booking-request-show-all-header text-center">
 
             <h1 class="page-name">
-                <spring:message code="show.all.booking.request"/>
+                <spring:message code="orders"/>
             </h1>
 
             <p class="lead">
-                On this page you can view booking request show all
+                On this page you can view orders
             </p>
 
         </div>
@@ -68,19 +68,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="bookingRequest" items="${bookingRequests}">
+                        <c:forEach var="order" items="${orders}">
                             <tr class="gradeC odd" role="row">
-                                <td class="center">${bookingRequest.roomsAmount}</td>
-                                <td class="center">${bookingRequest.categoryName}</td>
+                                <td class="center"><!--${room.roomsAmount}--></td>
+                                <td class="center"><!--${room.categoryName}--></td>
                                 <td class="center">
-                                    <fmt:formatDate pattern="dd/MM/yyyy" value="${bookingRequest.dateCheckIn}"/>
+                                    <fmt:formatDate pattern="dd/MM/yyyy" value="${order.dateCheckIn}"/>
                                 </td>
                                 <td class="center">
-                                    <fmt:formatDate pattern="dd/MM/yyyy" value="${bookingRequest.dateCheckOut}"/>
+                                    <fmt:formatDate pattern="dd/MM/yyyy" value="${order.dateCheckOut}"/>
                                 </td>
-                                <td class="center">
-                                    <span class="label label-info">${bookingRequest.bookingRequestStatusName}</span>
-                                </td>
+                                <td class="center">${order.bill} $</td>
                             </tr>
                         </c:forEach>
                         </tbody>

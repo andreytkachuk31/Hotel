@@ -19,7 +19,11 @@ public interface UserService {
 
     void updateUser(User user);
 
-    void deleteUser(User user);
+    void deleteUser(int id);
+
+    void blockUser(int id);
+
+    void unBlockUser(int id);
 
     User selectUserByLogin(String login);
 
@@ -28,8 +32,4 @@ public interface UserService {
     List<User> selectAllUsers();
 
     boolean isUserExist(String login);
-
-    boolean isUserDeleted(User user);
-
-    boolean isUserBlocked(User user);
 }

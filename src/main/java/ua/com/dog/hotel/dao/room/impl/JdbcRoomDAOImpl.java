@@ -27,12 +27,12 @@ public class JdbcRoomDAOImpl implements RoomDAO {
 
     @Override
     public Room selectRoomById(int id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM rooms WHERE id = ?",  new Object[]{id},  new BeanPropertyRowMapper<Room>(Room.class));
+        return jdbcTemplate.queryForObject("SELECT * FROM rooms WHERE id = ?", new Object[]{id}, new BeanPropertyRowMapper<Room>(Room.class));
     }
 
     @Override
     public List<Room> selectAllFreeRooms() {
-        return jdbcTemplate.query("SELECT * FROM rooms WHERE busy_state = 0",  new BeanPropertyRowMapper<Room>(Room.class));
+        return jdbcTemplate.query("SELECT * FROM rooms WHERE busy_state = 0", new BeanPropertyRowMapper<Room>(Room.class));
     }
 
     @Override

@@ -68,12 +68,32 @@ public class User implements Serializable {
         this.roleId = roleId;
     }
 
+    public String getRoleName() {
+        return UserRole.valueOf(roleId).name();
+    }
+
     public int getStatusId() {
         return statusId;
     }
 
     public void setStatusId(int statusId) {
         this.statusId = statusId;
+    }
+
+    public String getStatusName() {
+        return UserStatus.valueOf(statusId).name();
+    }
+
+    public boolean isActive() {
+        return UserStatus.ACTIVE.equals(UserStatus.valueOf(statusId));
+    }
+
+    public boolean isBlocked() {
+        return UserStatus.BLOCKED.equals(UserStatus.valueOf(statusId));
+    }
+
+    public boolean isDeleted() {
+        return UserStatus.DELETED.equals(UserStatus.valueOf(statusId));
     }
 
     @Override

@@ -5,7 +5,7 @@
 
      <div class="well login">
 
-        <form action="/login" method="post" class="form-signin">
+        <form action="/login/process" method="post" class="form-signin">
             <h2 class="form-signin-heading"><spring:message code="authorization"/></h2>
             <input type="text" name="login" class="input-block-level" placeholder="<spring:message code="login"/>"/>
             <input type="password" name="password" class="input-block-level" placeholder="<spring:message code="password"/>"/>

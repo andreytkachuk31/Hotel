@@ -3,7 +3,7 @@ package ua.com.dog.hotel.model.user;
 import java.io.Serializable;
 
 public enum UserRole implements Serializable {
-	ADMIN(1), MANAGER(2), CLIENT(3);
+	ROLE_ADMIN(1), ROLE_MANAGER(2), ROLE_CLIENT(3);
 
 	private int roleId;
 
@@ -28,8 +28,5 @@ public enum UserRole implements Serializable {
 	public int getRoleId() {
 		return roleId;
 	}
-	
-	public String getName() {
-		return name().toLowerCase();
-	}
+
 }

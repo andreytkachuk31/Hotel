@@ -3,15 +3,22 @@ package ua.com.dog.hotel.service.user.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.dog.hotel.dao.user.UserDAO;
+import ua.com.dog.hotel.model.user.UserPrincipal;
 import ua.com.dog.hotel.model.user.UserRole;
 import ua.com.dog.hotel.model.user.User;
 import ua.com.dog.hotel.model.user.UserStatus;
 import ua.com.dog.hotel.service.user.UserService;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,7 +27,7 @@ import java.util.List;
  * @author: andrey.tkachuk31
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     @Qualifier("jdbcUserDAOImpl")
@@ -29,7 +36,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean login(String login, String password) {
         User user = selectUserByLogin(login);
-        return user != null && user.getPassword().equals(password);
+        return user != null && user.isActive() && user.getPassword().equals(password);
     }
 
     @Override
@@ -46,8 +53,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
-    public void deleteUser(User user) {
-        userDAO.deleteUser(user);
+    public void deleteUser(int id) {
+        userDAO.deleteUser(id);
+    }
+
+    @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    public void blockUser(int id) {
+        User user = selectUserById(id);
+        user.setStatusId(UserStatus.BLOCKED.getStatusId());
+        userDAO.updateUser(user);
+    }
+
+    @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    public void unBlockUser(int id) {
+        User user = selectUserById(id);
+        user.setStatusId(UserStatus.ACTIVE.getStatusId());
+        userDAO.updateUser(user);
     }
 
     @Override
@@ -71,23 +94,28 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(User user) {
-        user.setRoleId(UserRole.CLIENT.getRoleId());
-        user.setStatusId(UserStatus.ACTIVE.getStatusId());
+        user.setRoleId(UserRole.ROLE_CLIENT.getRoleId());
         insertUser(user);
-    }
-
-    @Override
-    public boolean isUserDeleted(User user) {
-        return UserStatus.DELETED.equals(UserStatus.valueOf(user.getStatusId()));
-    }
-
-    @Override
-    public boolean isUserBlocked(User user) {
-        return UserStatus.BLOCKED.equals(UserStatus.valueOf(user.getStatusId()));
     }
 
     @Override
     public boolean isUserExist(String login) {
         return selectUserByLogin(login) != null;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
+
+        User user = userDAO.selectUserByLogin(username);
+
+        if (!user.isActive()){
+            throw new UsernameNotFoundException("User is not active");
+        }
+
+        return buildUserPrincipalFromUser(user);
+    }
+
+    private UserPrincipal buildUserPrincipalFromUser(User user) {
+        return new UserPrincipal(user, user.getLogin(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(UserRole.valueOf(user.getRoleId()).name())));
     }
 }

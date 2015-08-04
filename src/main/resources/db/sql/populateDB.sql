@@ -6,9 +6,9 @@ INSERT INTO users VALUES(3, 'sidorov','sidorov','Sidorov','Aleksandr', 3, 1);
 INSERT INTO users VALUES(4, 'manager','manager','Tkachuk','Andrii', 2, 1);
 INSERT INTO users VALUES(5, 'admin','admin','Geichenko','Iegor', 1, 1);
 
-INSERT INTO roles VALUES (1, 'admin');
-INSERT INTO roles VALUES (2, 'manager');
-INSERT INTO roles VALUES (3, 'client');
+INSERT INTO roles VALUES (1, 'ROLE_ADMIN');
+INSERT INTO roles VALUES (2, 'ROLE_MANAGER');
+INSERT INTO roles VALUES (3, 'ROLE_CLIENT');
 
 INSERT INTO statuses VALUES (1, 'active');
 INSERT INTO statuses VALUES (2, 'blocked');

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.dog.hotel.model.user.User;
 import ua.com.dog.hotel.service.user.UserService;
-import ua.com.dog.hotel.util.Path;
-import ua.com.dog.hotel.web.validator.ReqistrationValidator;
-
+import ua.com.dog.hotel.web.validator.client.ReqistrationValidator;
 import javax.servlet.http.HttpSession;
+
+import static ua.com.dog.hotel.util.Path.PAGE_REGISTRATION;
 
 @Controller
 @RequestMapping("/registration")
@@ -25,7 +25,7 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String showReqistrationPage() {
-        return Path.PAGE_REGISTRATION;
+        return PAGE_REGISTRATION;
     }
 
     @RequestMapping(method = RequestMethod.POST)

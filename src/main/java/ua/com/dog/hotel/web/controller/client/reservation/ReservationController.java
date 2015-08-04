@@ -6,6 +6,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.dog.hotel.model.order.Order;
 import ua.com.dog.hotel.model.room.Room;
 import ua.com.dog.hotel.model.user.User;
+import ua.com.dog.hotel.model.user.UserPrincipal;
 import ua.com.dog.hotel.service.order.OrderService;
 import ua.com.dog.hotel.service.room.RoomService;
-import ua.com.dog.hotel.web.validator.ReservationValidator;
+import ua.com.dog.hotel.web.validator.client.ReservationValidator;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 import static ua.com.dog.hotel.util.Path.PAGE_RESERVATION;
+import static ua.com.dog.hotel.util.Path.PAGE_RESERVATION_LIST;
 
 /**
  * @author Andrii_Tkachuk
@@ -38,6 +42,14 @@ public class ReservationController {
 
     @Autowired
     private OrderService orderService;
+
+    @RequestMapping(value="/showList", method = RequestMethod.GET)
+    public String showReservationList(final Model model) {
+        User user = getCurrentUser();
+        List<Order> orders = orderService.selectOrdersByUserId(user.getId());
+        model.addAttribute("orders", orders);
+        return PAGE_RESERVATION_LIST;
+    }
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public String reservationShowRoom(@RequestParam final int roomId, final Model model) {
@@ -63,7 +75,7 @@ public class ReservationController {
             return "redirect:error";
         } else {
             Room room = roomService.selectRoomById(roomId);
-            User user = (User) session.getAttribute("user");
+            User user = getCurrentUser();
             int daysBooking = Days.daysBetween(new DateTime(dateCheckIn), new DateTime(dateCheckOut)).getDays();
 
             Order order = new Order();
@@ -71,7 +83,6 @@ public class ReservationController {
             order.setUserId(user.getId());
             order.setDateCheckIn(dateCheckIn);
             order.setDateCheckOut(dateCheckOut);
-            order.setDateBooking(new Date(System.currentTimeMillis()));
             order.setBill(daysBooking * room.getPrice());
 
             model.addAttribute("room", room);
@@ -96,5 +107,10 @@ public class ReservationController {
             session.setAttribute("error", " Requested room is not free now");
             return "redirect:error";
         }
+    }
+
+    public User getCurrentUser() {
+        UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userPrincipal.getUser();
     }
 }

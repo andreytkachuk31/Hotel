@@ -13,7 +13,6 @@ public class Order implements Serializable {
 	private int userId;
 	private Date dateCheckIn;
     private Date dateCheckOut;
-    private Date dateBooking;
     private long bill;
 
     public int getId() {
@@ -56,14 +55,6 @@ public class Order implements Serializable {
 		this.roomId = roomId;
 	}
 
-	public Date getDateBooking() {
-		return dateBooking;
-	}
-
-	public void setDateBooking(Date dateBooking) {
-		this.dateBooking = dateBooking;
-	}
-
     public long getBill() {
         return bill;
     }
@@ -80,14 +71,13 @@ public class Order implements Serializable {
                 ", roomId=" + roomId +
                 ", dateCheckIn=" + dateCheckIn +
                 ", dateCheckOut=" + dateCheckOut +
-                ", dateBooking=" + dateBooking +
                 ", bill=" + bill +
                 "}";
 	}
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(id, roomId, userId, dateCheckIn, dateCheckOut, dateBooking, bill);
+        return Objects.hash(id, roomId, userId, dateCheckIn, dateCheckOut, bill);
 	}
 
 	@Override
@@ -102,7 +92,6 @@ public class Order implements Serializable {
             && Objects.equals(userId, other.userId)
             && Objects.equals(dateCheckIn, other.dateCheckIn)
             && Objects.equals(dateCheckOut, other.dateCheckOut)
-            && Objects.equals(dateBooking, other.dateBooking)
             && Objects.equals(bill, other.bill);
 	}
 }

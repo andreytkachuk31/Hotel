@@ -5,6 +5,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div class="header">
 
@@ -13,21 +14,17 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <a href="/home" class="brand">Hotel</a>
-                <c:if test="${user != null}">
-                    <c:choose>
-                        <c:when test="${user.roleId == '1' }">
-                            <admin:menu/>
-                        </c:when>
+                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+                        <admin:menu/>
+                    </sec:authorize>
 
-                        <c:when test="${user.roleId == '2' }">
-                            <manager:menu/>
-                        </c:when>
+                    <sec:authorize access="hasRole('ROLE_MANAGER')">
+                        <manager:menu/>
+                    </sec:authorize>
 
-                        <c:when test="${user.roleId == '3' }">
-                            <client:menu/>
-                        </c:when>
-                    </c:choose>
-                </c:if>
+                    <sec:authorize access="hasRole('ROLE_CLIENT')">
+                        <client:menu/>
+                    </sec:authorize>
             </div>
         </div>
     </div>

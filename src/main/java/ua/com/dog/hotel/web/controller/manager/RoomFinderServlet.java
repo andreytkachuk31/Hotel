@@ -27,7 +27,7 @@ public class RoomFinderServlet extends HttpServlet {
         List<Room> suitableListRooms = dbm.selectRoomByUserRequest(Integer.parseInt(category), Integer.parseInt(roomsAmount));
         request.setAttribute("suitableListRooms", suitableListRooms);
         request.setAttribute("bookingRequestId", bookingRequestId);
-        request.getRequestDispatcher(Path.PAGE_ROOM_FINDER).forward(request, response);
+        request.getRequestDispatcher(Path.PAGE_ROOM_FINDER_MANAGER).forward(request, response);
 
     }
 }

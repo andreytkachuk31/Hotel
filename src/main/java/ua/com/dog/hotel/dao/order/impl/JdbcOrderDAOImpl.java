@@ -1,10 +1,12 @@
 package ua.com.dog.hotel.dao.order.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.order.OrderDAO;
 import ua.com.dog.hotel.model.order.Order;
+import ua.com.dog.hotel.model.user.User;
 
 import java.util.List;
 
@@ -31,6 +33,10 @@ public class JdbcOrderDAOImpl implements OrderDAO {
 
     @Override
     public List<Order> selectOrdersByUserId(int userId) {
-        return null;
+        return jdbcTemplate.query(
+                "SELECT * FROM orders WHERE user_id=?",
+                new Object[]{userId},
+                new BeanPropertyRowMapper<Order>(Order.class)
+        );
     }
 }

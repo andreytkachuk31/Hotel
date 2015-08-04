@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(45) NOT NULL,
   role_id INT NOT NULL,
-  status_id INT NOT NULL,
+  status_id INT NOT NULL DEFAULT 1,
   PRIMARY KEY (id),
   UNIQUE INDEX login_UNIQUE (login ASC)
 );
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS roles (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(10) NOT NULL,
+  name VARCHAR(20) NOT NULL,
   PRIMARY KEY (id),
   UNIQUE INDEX name_UNIQUE (name ASC)
  );

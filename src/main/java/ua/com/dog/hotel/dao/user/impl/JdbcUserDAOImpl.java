@@ -7,7 +7,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.user.UserDAO;
+import ua.com.dog.hotel.model.room.Room;
 import ua.com.dog.hotel.model.user.User;
+import ua.com.dog.hotel.model.user.UserStatus;
 
 import java.util.List;
 
@@ -47,18 +49,22 @@ public class JdbcUserDAOImpl implements UserDAO {
     @Override
     @Cacheable("hotelCache")
     public List<User> selectAllUsers() {
-        final String SQL__FIND_ALL_USERS = "SELECT * FROM users WHERE status_id <> 2";
-        return null;
+        return jdbcTemplate.query("SELECT * FROM users", new BeanPropertyRowMapper<User>(User.class));
     }
 
     @Override
     public void updateUser(User user) {
-        final String SQL__UPDATE_USER = "UPDATE users SET first_name=?," +
-                "last_name=?, password=?, email=?, role_id=?, status_id=?, loginFailed=? WHERE login=?";
+        jdbcTemplate.update(
+                "UPDATE users SET first_name=?, last_name=?, role_id=?, status_id=? WHERE id=?",
+                user.getFirstName(),
+                user.getLastName(),
+                user.getRoleId(),
+                user.getStatusId(),
+                user.getId());
     }
 
     @Override
-    public void deleteUser(User user) {
-        final String SQL__DELETE_USER = "UPDATE users SET status_id = 2 WHERE id = ?";
+    public void deleteUser(int id) {
+        jdbcTemplate.update("DELETE FROM users WHERE id=?", id);
     }
 }

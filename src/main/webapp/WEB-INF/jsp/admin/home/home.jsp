@@ -8,7 +8,7 @@
         <div class="home-header text-center">
 
             <h1 class="page-name">
-                <spring:message code="manager.home.page"/>
+                <spring:message code="admin.home.page"/>
             </h1>
 
             <p class="lead">

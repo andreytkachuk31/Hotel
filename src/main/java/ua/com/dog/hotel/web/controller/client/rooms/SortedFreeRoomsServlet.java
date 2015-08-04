@@ -23,7 +23,7 @@ public class SortedFreeRoomsServlet extends HttpServlet {
 		DBManager dbm = DBManager.getInstance();
 		List<Room> sortedFreeRooms = dbm.sortedSelectAllFreeRooms(Integer.parseInt(request.getParameter("sortBy")));
 		request.setAttribute("sortedFreeRooms", sortedFreeRooms);
-		request.getRequestDispatcher(Path.PAGE_ROOMS).forward(request, response);
+		request.getRequestDispatcher(Path.PAGE_FREE_ROOMS).forward(request, response);
 	}
 
 }

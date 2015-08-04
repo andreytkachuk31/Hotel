@@ -52,7 +52,7 @@ public class HibernateUserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void deleteUser(User user) {
+    public void deleteUser(int id) {
 
     }
 }

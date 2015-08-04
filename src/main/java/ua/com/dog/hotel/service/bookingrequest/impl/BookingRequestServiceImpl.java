@@ -2,6 +2,7 @@ package ua.com.dog.hotel.service.bookingrequest.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import ua.com.dog.hotel.dao.bookingrequest.BookingRequestDAO;
 import ua.com.dog.hotel.model.bookingrequest.BookingRequest;

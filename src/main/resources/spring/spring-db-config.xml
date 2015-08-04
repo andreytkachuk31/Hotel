@@ -11,7 +11,7 @@
 		    http://www.springframework.org/schema/tx
 		    http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+    <tx:annotation-driven transaction-manager="jdbcTransactionManager"/>
 
     <context:component-scan base-package="ua.com.dog.hotel.dao"/>
     <context:component-scan base-package="ua.com.dog.hotel.service"/>
