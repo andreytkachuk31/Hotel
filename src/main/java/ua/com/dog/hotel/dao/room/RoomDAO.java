@@ -1,6 +1,7 @@
 package ua.com.dog.hotel.dao.room;
 
 import ua.com.dog.hotel.model.room.Room;
+import ua.com.dog.hotel.model.room.RoomBusyState;
 import ua.com.dog.hotel.model.room.RoomCategory;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 public interface RoomDAO {
 
     Room selectRoomById(int id);
+
+    List<Room> selectAllRooms();
 
     List<Room> selectAllFreeRooms();
 

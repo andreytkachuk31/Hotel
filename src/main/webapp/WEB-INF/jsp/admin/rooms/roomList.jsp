@@ -6,21 +6,21 @@
 
     <div class="room">
 
-        <div class="user-header text-center">
+        <div class="room-header text-center">
 
             <h1 class="page-name">
-                <spring:message code="users"/>
+                <spring:message code="rooms"/>
             </h1>
 
             <p class="lead">
-                This is page provided information about users
+                This is page provided information about rooms
             </p>
 
         </div>
 
         <hr/>
 
-        <div class="user-body">
+        <div class="room-body">
 
             <div class="table_search both_side">
 
@@ -49,57 +49,32 @@
                         <thead>
                             <tr role="row">
                                 <th class="sorting" style="width: 170px;">
-                                    <spring:message code="first.name"/>
+                                    <spring:message code="room.number"/>
                                 </th>
                                 <th class="sorting" style="width: 207px;">
-                                    <spring:message code="last.name"/>
+                                     <spring:message code="room.category"/>
                                 </th>
                                 <th class="sorting_desc" style="width: 188px;" aria-sort="descending">
-                                    <spring:message code="login"/>
+                                   <spring:message code="rooms.amount"/>
                                 </th>
                                 <th class="sorting" style="width: 108px;">
-                                    <spring:message code="status"/>
+                                    <spring:message code="price.per.day"/>
                                 </th>
                                 <th class="sorting" style="width: 108px;">
-                                    <spring:message code="role"/>
-                                </th>
-                                <th class="sorting" style="width: 108px;">
-                                    <spring:message code="action"/>
+                                   <spring:message code="status"/>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="user" items="${users}">
+                        <c:forEach var="room" items="${rooms}">
                             <tr class="gradeC odd" role="row">
-                                <td class="center">${user.firstName}</td>
-                                <td class="center">${user.lastName}</td>
-                                <td class="center">${user.login}</td>
-                                <td class="center">${user.statusName}</td>
-                                <td class="center">${user.roleName}</td>
-                                <td class="center" width="20%">
-                                    <a href="/admin/users/show?id=${user.id}">
-                                        <button class="btn btn-sm btn-primary">
-                                            Edit
-                                        </button>
-                                    </a>
-                                    <c:if test="${user.active}">
-                                        <a href="/admin/users/block?id=${user.id}">
-                                            <button class="btn btn-sm btn-warning">
-                                                Block
-                                            </button>
-                                        </a>
-                                     </c:if>
-                                     <c:if test="${user.blocked}">
-                                         <a href="/admin/users/unblock?id=${user.id}">
-                                             <button class="btn btn-sm btn-warning">
-                                                 Unblock
-                                             </button>
-                                         </a>
-                                     </c:if>
-                                    <a href="/admin/users/delete?id=${user.id}">
-                                        <button class="btn btn-sm btn-danger">
-                                            Delete
-                                        </button>
+                                <td class="center">${room.number}</td>
+                                <td class="center">${room.categoryName}</td>
+                                <td class="center">${room.placeAmount}</td>
+                                <td class="center">${room.price}</td>
+                                <td class="center">
+                                    <a href="/reservation/show?roomId=${room.id}">
+                                        <spring:message code="book.room"/>
                                     </a>
                                 </td>
                             </tr>

@@ -17,6 +17,7 @@ public final class Path {
     public static final String PAGE_USER_LIST_ADMIN = "/admin/users/userList";
     public static final String PAGE_USER_ADMIN = "/admin/users/user";
     public static final String PAGE_USER_ADMIN_SUCCESS = "/admin/users/userSuccess";
+    public static final String PAGE_ROOM_LIST_ADMIN = "/admin/rooms/roomList";
 
     public static final String PAGE_HOME_MANAGER = "/manager/home";
     public static final String PAGE_BOOKING_REQUESTS_MANAGER = "/WEB-INF/jsp/manager/bookingRequestsProcessor.jsp";

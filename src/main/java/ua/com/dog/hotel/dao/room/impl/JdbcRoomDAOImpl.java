@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.room.RoomDAO;
 import ua.com.dog.hotel.model.room.Room;
+import ua.com.dog.hotel.model.room.RoomBusyState;
 import ua.com.dog.hotel.model.room.RoomCategory;
 import ua.com.dog.hotel.model.user.User;
 
@@ -31,8 +32,13 @@ public class JdbcRoomDAOImpl implements RoomDAO {
     }
 
     @Override
+    public List<Room> selectAllRooms() {
+        return jdbcTemplate.query("SELECT * FROM rooms", new BeanPropertyRowMapper<Room>(Room.class));
+    }
+
+    @Override
     public List<Room> selectAllFreeRooms() {
-        return jdbcTemplate.query("SELECT * FROM rooms WHERE busy_state = 0", new BeanPropertyRowMapper<Room>(Room.class));
+        return jdbcTemplate.query("SELECT * FROM rooms WHERE busy_state = " + RoomBusyState.FREE.getStatusId(), new BeanPropertyRowMapper<Room>(Room.class));
     }
 
     @Override

@@ -204,16 +204,6 @@ public final class DBManager {
         return br;
     }
 
-    private Order extractOrder(ResultSet rs) throws SQLException {
-        Order order = new Order();
-        order.setRoomId(rs.getInt("room_id"));
-        order.setUserId(rs.getInt("user_id"));
-        order.setDateCheckIn(rs.getDate("date_arrival"));
-        order.setDateCheckOut(rs.getDate("date_check_out"));
-        order.setBill(rs.getInt("bill"));
-        return order;
-    }
-
     private void close(Connection con) {
         if (con != null) {
             try {

@@ -3,17 +3,11 @@ package ua.com.dog.hotel.service.room.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Transactional;
 import ua.com.dog.hotel.dao.room.RoomDAO;
 import ua.com.dog.hotel.model.room.Room;
 import ua.com.dog.hotel.model.room.RoomCategory;
 import ua.com.dog.hotel.service.room.RoomService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -33,6 +27,11 @@ public class RoomServiceImpl implements RoomService {
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
+    }
+
+    @Override
+    public List<Room> selectAllRooms() {
+        return roomDAO.selectAllFreeRooms();
     }
 
     @Override

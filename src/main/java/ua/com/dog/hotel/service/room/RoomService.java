@@ -13,6 +13,8 @@ public interface RoomService {
 
     Room selectRoomById(int id);
 
+    List<Room> selectAllRooms();
+
     List<Room> selectAllFreeRooms();
 
     List<Room> selectAllFreeRooms(int sortValue);
