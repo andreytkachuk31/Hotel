@@ -12,10 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.com.dog.hotel.model.order.Order;
-import ua.com.dog.hotel.model.room.Room;
-import ua.com.dog.hotel.model.user.User;
-import ua.com.dog.hotel.model.user.UserPrincipal;
+import ua.com.dog.hotel.model.entity.order.Order;
+import ua.com.dog.hotel.model.entity.room.Room;
+import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.entity.user.UserPrincipal;
 import ua.com.dog.hotel.service.order.OrderService;
 import ua.com.dog.hotel.service.room.RoomService;
 import ua.com.dog.hotel.web.validator.client.ReservationValidator;
@@ -74,13 +74,13 @@ public class ReservationController {
             session.setAttribute("error", errorMessage);
             return "redirect:error";
         } else {
-            Room room = roomService.selectRoomById(roomId);
             User user = getCurrentUser();
+            Room room = roomService.selectRoomById(roomId);
             int daysBooking = Days.daysBetween(new DateTime(dateCheckIn), new DateTime(dateCheckOut)).getDays();
 
             Order order = new Order();
-            order.setRoomId(roomId);
-            order.setUserId(user.getId());
+            order.setRoom(room);
+            order.setUser(user);
             order.setDateCheckIn(dateCheckIn);
             order.setDateCheckOut(dateCheckOut);
             order.setBill(daysBooking * room.getPrice());
@@ -98,8 +98,8 @@ public class ReservationController {
     @RequestMapping(value = "/confirm", method = RequestMethod.GET)
     public String reservationConfirmRoom(final HttpSession session, final Model model) {
         Order order = (Order) session.getAttribute("order");
-        Room room = roomService.selectRoomById(order.getRoomId());
-        if (room.getBusyStateId() != 1 && room.getBusyStateId() != 2) {
+        Room room = roomService.selectRoomById(order.getRoom().getId());
+        if (room.getBusyStatus().getStatusId() != 1 && room.getBusyStatus().getStatusId() != 2) {
             model.addAttribute("status", "SUCCESS");
             orderService.makeOrder(order);
             return PAGE_RESERVATION;

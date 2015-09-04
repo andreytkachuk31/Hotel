@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.dog.hotel.dao.user.UserDAO;
-import ua.com.dog.hotel.model.user.UserPrincipal;
-import ua.com.dog.hotel.model.user.UserRole;
-import ua.com.dog.hotel.model.user.User;
-import ua.com.dog.hotel.model.user.UserStatus;
+import ua.com.dog.hotel.model.entity.user.UserPrincipal;
+import ua.com.dog.hotel.model.entity.user.UserRole;
+import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.entity.user.UserStatus;
 import ua.com.dog.hotel.service.user.UserService;
 
 import java.util.Arrays;

@@ -1,4 +1,7 @@
-package ua.com.dog.hotel.model.order;
+package ua.com.dog.hotel.model.entity.order;
+
+import ua.com.dog.hotel.model.entity.room.Room;
+import ua.com.dog.hotel.model.entity.user.User;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -9,8 +12,8 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = -14773346161997564L;
 
     private int id;
-	private int roomId;
-	private int userId;
+	private Room room;
+	private User user;
 	private Date dateCheckIn;
     private Date dateCheckOut;
     private long bill;
@@ -23,13 +26,21 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public int getUserId() {
-		return userId;
-	}
+    public Room getRoom() {
+        return room;
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Date getDateCheckIn() {
         return dateCheckIn;
@@ -47,14 +58,6 @@ public class Order implements Serializable {
 		this.dateCheckOut = dateCheckOut;
     }
 
-	public int getRoomId() {
-		return roomId;
-	}
-
-	public void setRoomId(int roomId) {
-		this.roomId = roomId;
-	}
-
     public long getBill() {
         return bill;
     }
@@ -67,8 +70,8 @@ public class Order implements Serializable {
 	public String toString() {
 		return "Order {" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", roomId=" + roomId +
+                ", userId=" + user.getId() +
+                ", roomId=" + room.getId() +
                 ", dateCheckIn=" + dateCheckIn +
                 ", dateCheckOut=" + dateCheckOut +
                 ", bill=" + bill +
@@ -77,7 +80,7 @@ public class Order implements Serializable {
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(id, roomId, userId, dateCheckIn, dateCheckOut, bill);
+        return Objects.hash(id, room.getId(), user.getId(), dateCheckIn, dateCheckOut, bill);
 	}
 
 	@Override
@@ -88,8 +91,8 @@ public class Order implements Serializable {
 		Order other = (Order) obj;
 
         return Objects.equals(id, other.id)
-            && Objects.equals(roomId, other.roomId)
-            && Objects.equals(userId, other.userId)
+            && Objects.equals(room.getId(), other.room.getId())
+            && Objects.equals(user.getId(), other.user.getId())
             && Objects.equals(dateCheckIn, other.dateCheckIn)
             && Objects.equals(dateCheckOut, other.dateCheckOut)
             && Objects.equals(bill, other.bill);

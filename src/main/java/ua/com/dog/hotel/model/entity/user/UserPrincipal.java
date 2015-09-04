@@ -1,4 +1,4 @@
-package ua.com.dog.hotel.model.user;
+package ua.com.dog.hotel.model.entity.user;
 
 import org.springframework.security.core.GrantedAuthority;
 

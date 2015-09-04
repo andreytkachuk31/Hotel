@@ -1,4 +1,4 @@
-package ua.com.dog.hotel.model.room;
+package ua.com.dog.hotel.model.entity.room;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -10,9 +10,9 @@ public class Room implements Serializable {
 	private int id;
 	private int number;
 	private int placeAmount;
-    private int categoryId;
+    private RoomCategory roomCategory;
 	private int price;
-	private int busyStateId;
+	private RoomBusyStatus busyStatus;
 
 	public int getId() {
 		return id;
@@ -46,24 +46,24 @@ public class Room implements Serializable {
 		this.price = price;
 	}
 
-	public int getCategoryId() {
-		return categoryId;
+	public RoomCategory getRoomCategory() {
+		return roomCategory;
 	}
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public void setRoomCategory(RoomCategory roomCategory) {
+		this.roomCategory = roomCategory;
 	}
 
 	public String getCategoryName() {
-		return RoomCategory.valueOf(categoryId).getName();
+		return roomCategory.getName();
 	}
 
-	public int getBusyStateId() {
-		return busyStateId;
+	public RoomBusyStatus getBusyStatus() {
+		return busyStatus;
 	}
 
-	public void setBusyStateId(int busyState) {
-		this.busyStateId = busyState;
+	public void setBusyStatus(RoomBusyStatus busyStatus) {
+		this.busyStatus = busyStatus;
 	}
 
 	@Override
@@ -72,15 +72,15 @@ public class Room implements Serializable {
 				"id=" + id +
 				", number=" + number +
 				", placeAmount=" + placeAmount +
-				", categoryId=" + categoryId +
+				", categoryId=" + roomCategory.getValue() +
 				", price=" + price +
-				", busyStateId=" + busyStateId +
+				", busyStateId=" + busyStatus.getStatusId() +
 				"}";
 	}
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(id, number, placeAmount, categoryId, price, busyStateId);
+        return Objects.hash(id, number, placeAmount, roomCategory.getValue(), price, busyStatus.getStatusId());
 	}
 
 	@Override
@@ -93,9 +93,9 @@ public class Room implements Serializable {
         return Objects.equals(id, other.id)
             && Objects.equals(number, other.number)
             && Objects.equals(placeAmount, other.placeAmount)
-            && Objects.equals(categoryId, other.categoryId)
+            && Objects.equals(roomCategory.getValue(), roomCategory.getValue())
             && Objects.equals(price, other.price)
-            && Objects.equals(busyStateId, other.busyStateId);
+            && Objects.equals(busyStatus.getStatusId(), other.busyStatus.getStatusId());
 	}
 
 }

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
-import ua.com.dog.hotel.model.user.User;
+import ua.com.dog.hotel.model.entity.user.User;
 import ua.com.dog.hotel.service.user.UserService;
 
 import javax.servlet.ServletException;

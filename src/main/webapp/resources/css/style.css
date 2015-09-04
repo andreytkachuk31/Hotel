@@ -120,6 +120,15 @@
     overflow:hidden;
 }
 
+.table_search {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.table_search select, .table_search input[type="search"] {
+    margin-bottom: 0px;
+}
+
 .margin-bottom50  {
     margin-bottom: 0 0 50px 0 !important;
 }
@@ -161,6 +170,10 @@
 .pagination-block {
     margin-bottom: 0 0 50px 0 !important;
     overflow: hidden;
+}
+
+.table_wrapper .sorting {
+    cursor: pointer;
 }
 
 .footer {

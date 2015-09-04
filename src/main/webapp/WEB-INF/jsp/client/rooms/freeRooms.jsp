@@ -25,20 +25,18 @@
             <div class="table_search both_side">
 
                 <div class="col-sm-6">
-                    <label>Show
-                        <select class="input-small">
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select> entries
-                    </label>
+                    <span>Show</span>
+                        <select id="perPage" name="perPage" class="input-small">
+                            <option value="10" <c:if test="${pageable.perPage == 10}">selected</c:if>>10</option>
+                            <option value="25" <c:if test="${pageable.perPage == 25}">selected</c:if>>25</option>
+                            <option value="50" <c:if test="${pageable.perPage == 50}">selected</c:if>>50</option>
+                        </select>
+                    <span>entries</span>
                 </div>
 
                 <div class="col-sm-6">
-                    <label>
-                        Search:<input type="search" name="search"/>
-                    </label>
+                    <span>Search:</span>
+                    <input id="search" type="search" name="search"/>
                 </div>
             </div>
 
@@ -48,25 +46,34 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr role="row">
-                                <th class="sorting" style="width: 170px;">
+                                <th class="sorting" data-sort="number" style="width: 170px;">
                                     <spring:message code="room.number"/>
+                                    <c:if test="${pageable.sort == 'number'}">
+                                        <i class='icon-arrow-down'></i>
+                                    </c:if>
                                 </th>
-                                <th class="sorting" style="width: 207px;">
+                                <th style="width: 207px;">
                                     <spring:message code="room.category"/>
                                 </th>
-                                <th class="sorting_desc" style="width: 188px;" aria-sort="descending">
+                                <th class="sorting" data-sort="place_amount" style="width: 188px;" aria-sort="descending">
                                     <spring:message code="rooms.amount"/>
+                                    <c:if test="${pageable.sort == 'place_amount'}">
+                                        <i class='icon-arrow-down'></i>
+                                    </c:if>
                                 </th>
-                                <th class="sorting" style="width: 147px;">
+                                <th class="sorting" data-sort="price" style="width: 147px;">
                                     <spring:message code="price.per.day"/>
+                                    <c:if test="${pageable.sort == 'price'}">
+                                        <i class='icon-arrow-down'></i>
+                                    </c:if>
                                 </th>
-                                <th class="sorting" style="width: 108px;">
+                                <th style="width: 108px;">
                                     <spring:message code="book.room"/>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="freeRoom" items="${freeRooms}">
+                        <c:forEach var="freeRoom" items="${paginatedFreeRooms.results}">
                             <tr class="gradeC odd" role="row">
                                 <td class="center">${freeRoom.number}</td>
                                 <td class="center">${freeRoom.categoryName}</td>
@@ -87,20 +94,17 @@
             <div class="table_pagination both_side">
 
                 <div class="col-sm-6">
-                    Showing 1 to 10 of 57 entries
+                    Showing 1 to ${pageable.perPage} of ${paginatedFreeRooms.totalCount} entries
                 </div>
 
                 <div class="col-sm-6">
                     <div class="pagination margin-bottom50">
                         <ul>
-                            <li class="previous disabled"><a href="#">Previous</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li class="next"><a href="#">Next</a></li>
+                            <li class="previous <c:if test="${pageable.page == 1}">disabled</c:if>"><a href="/rooms?page=${pageable.page-1}&perPage=${pageable.perPage}&sort=${pageable.sort}&filter=${pageable.filter}">Previous</a></li>
+                            <c:forEach var="i" begin="1" end="${paginatedFreeRooms.numberOfPages}" step="1">
+                                <li <c:if test="${pageable.page == i}">class="active"</c:if>><a href="/rooms?page=${i}&perPage=${pageable.perPage}&sort=${pageable.sort}&filter=${pageable.filter}">${i}</a></li>
+                            </c:forEach>
+                            <li class="next <c:if test="${pageable.page == paginatedFreeRooms.numberOfPages}">disabled</c:if>"><a href="/rooms?page=${pageable.page+1}&perPage=${pageable.perPage}&sort=${pageable.sort}&filter=${pageable.filter}">Next</a></li>
                         </ul>
                     </div>
                 </div>
@@ -110,5 +114,40 @@
         </div>
 
     </div>
+
+    <script type="text/javascript">
+
+        $("#perPage").change(function() {
+            var perPage = $(this).val();
+            var page = 1;
+            var sort = '${pageable.sort}';
+            var filter = '${pageable.filter}';
+            submit(perPage, page, sort, filter)
+        });
+
+        $(".sorting").click(function() {
+            var perPage = $("#perPage").val();
+            var page = ${pageable.page};
+            var sort = $(this).data("sort");
+            var filter = '${pageable.filter}';
+            submit(perPage, page, sort, filter)
+        });
+
+        $("#search").keypress(function(e) {
+            var key = e.which;
+            if(key == 13) {
+                var perPage = $("#perPage").val();
+                var page = 1;
+                var sort = '${pageable.sort}';
+                var filter = $(this).val();
+                submit(perPage, page, sort, filter)
+            }
+        });
+
+        function submit(perPage, page, sort, filter) {
+            document.location.href="/rooms?page=" + page + "&perPage=" + perPage + "&sort=" + sort + "&filter=" + filter;
+        }
+
+    </script>
 
 </layout:layout>

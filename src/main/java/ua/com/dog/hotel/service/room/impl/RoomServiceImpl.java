@@ -3,10 +3,13 @@ package ua.com.dog.hotel.service.room.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import ua.com.dog.hotel.dao.bookingrequest.BookingRequestDAO;
 import ua.com.dog.hotel.dao.room.RoomDAO;
-import ua.com.dog.hotel.model.room.Room;
-import ua.com.dog.hotel.model.room.RoomCategory;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.dog.hotel.model.pagination.PaginatedResults;
+import ua.com.dog.hotel.model.entity.room.Room;
 import ua.com.dog.hotel.service.room.RoomService;
+import ua.com.dog.hotel.model.pagination.Pageable;
 
 import java.util.List;
 
@@ -20,6 +23,9 @@ public class RoomServiceImpl implements RoomService {
     @Autowired
     private RoomDAO roomDAO;
 
+    @Autowired
+    private BookingRequestDAO bookingRequestDAO;
+
     @Override
     public Room selectRoomById(int id) {
         try {
@@ -31,31 +37,25 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public List<Room> selectAllRooms() {
-        return roomDAO.selectAllFreeRooms();
+        return roomDAO.selectAllRooms();
     }
 
     @Override
-    public List<Room> selectAllFreeRooms() {
-        return roomDAO.selectAllFreeRooms();
+    public PaginatedResults<Room> selectAllFreeRooms(Pageable pageable) {
+        List<Room> freeRooms = roomDAO.selectAllFreeRooms(pageable);
+        int totalCount = roomDAO.selectCountAllFreeRooms();
+        int numberOfPages = (totalCount / pageable.getPerPage()) + 1;
+        return new PaginatedResults<Room>(numberOfPages, totalCount, freeRooms);
     }
 
     @Override
-    public List<Room> selectAllFreeRooms(int sortValue) {
-        return roomDAO.selectAllFreeRooms(sortValue);
+    public List<Room> selectFreeRoomsByBookingRequestId(int bookingRequestId) {
+        BookingRequest bookingRequest = bookingRequestDAO.selectBookingRequestsById(bookingRequestId);
+        return roomDAO.selectFreeRoomsByBookingRequest(bookingRequest);
     }
 
     @Override
-    public List<Room> selectAllRoomsByCategory(RoomCategory category) {
-        return roomDAO.selectAllRoomsByCategory(category);
-    }
-
-    @Override
-    public List<Room> selectRoomsByBookingRequest(int category, int roomsAmount) {
-        return roomDAO.selectRoomsByBookingRequest(category, roomsAmount);
-    }
-
-    @Override
-    public void updateRoomBusyStateOccupiedById(int id) {
-        roomDAO.updateRoomBusyStateOccupiedById(id);
+    public void updateRoomBusyStatusBookedById(int id) {
+        roomDAO.updateRoomBusyStatusBookedById(id);
     }
 }

@@ -27,20 +27,19 @@
             <div class="table_search both_side">
 
                 <div class="col-sm-6">
-                    <label>Show
+                    <span>Show</span>
                         <select class="input-small">
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
-                        </select> entries
-                    </label>
+                        </select>
+                    <span>entries</span>
                 </div>
 
                 <div class="col-sm-6">
-                    <label>
-                        Search:<input type="search" name="search"/>
-                    </label>
+                    <span>Search:</span>
+                    <input type="search" name="search"/>
                 </div>
             </div>
 

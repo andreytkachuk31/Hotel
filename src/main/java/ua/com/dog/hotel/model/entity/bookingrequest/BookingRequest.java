@@ -1,6 +1,6 @@
-package ua.com.dog.hotel.model.bookingrequest;
+package ua.com.dog.hotel.model.entity.bookingrequest;
 
-import ua.com.dog.hotel.model.room.RoomCategory;
+import ua.com.dog.hotel.model.entity.room.RoomCategory;
 
 import java.io.Serializable;
 import java.util.Date;

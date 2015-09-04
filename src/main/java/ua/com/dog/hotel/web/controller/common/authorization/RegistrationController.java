@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.com.dog.hotel.model.user.User;
+import ua.com.dog.hotel.model.entity.user.User;
 import ua.com.dog.hotel.service.user.UserService;
 import ua.com.dog.hotel.web.validator.client.ReqistrationValidator;
 import javax.servlet.http.HttpSession;

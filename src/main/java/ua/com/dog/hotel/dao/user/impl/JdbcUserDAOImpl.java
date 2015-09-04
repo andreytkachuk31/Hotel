@@ -1,15 +1,12 @@
 package ua.com.dog.hotel.dao.user.impl;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.user.UserDAO;
-import ua.com.dog.hotel.model.room.Room;
-import ua.com.dog.hotel.model.user.User;
-import ua.com.dog.hotel.model.user.UserStatus;
+import ua.com.dog.hotel.model.entity.user.User;
 
 import java.util.List;
 

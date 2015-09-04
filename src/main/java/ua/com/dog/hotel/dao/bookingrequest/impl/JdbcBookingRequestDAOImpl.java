@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.bookingrequest.BookingRequestDAO;
-import ua.com.dog.hotel.model.bookingrequest.BookingRequest;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequest;
 
 import java.util.List;
 
@@ -34,11 +34,31 @@ public class JdbcBookingRequestDAOImpl implements BookingRequestDAO {
     }
 
     @Override
+    public BookingRequest selectBookingRequestsById(int id) {
+        return jdbcTemplate.queryForObject(
+                "SELECT * FROM booking_requests WHERE id=?",
+                new Object[]{id},
+                new BeanPropertyRowMapper<BookingRequest>(BookingRequest.class));
+    }
+
+    @Override
     public List<BookingRequest> selectBookingRequestsByUserId(int userId) {
         return jdbcTemplate.query(
-                "SELECT * FROM booking_requests INNER JOIN users ON users.id = booking_requests.user_id WHERE user_id=?",
+                "SELECT * FROM booking_requests WHERE user_id=?",
                 new Object[]{userId},
                 new BeanPropertyRowMapper<BookingRequest>(BookingRequest.class)
         );
+    }
+
+    @Override
+    public List<BookingRequest> selectAllBookingRequests() {
+        return jdbcTemplate.query(
+                "SELECT * FROM booking_requests",
+                new BeanPropertyRowMapper<BookingRequest>(BookingRequest.class));
+    }
+
+    @Override
+    public void updateBookingRequestStatusById(int id) {
+        jdbcTemplate.update("UPDATE booking_requests SET status_id = 3 WHERE id = ?", id);
     }
 }

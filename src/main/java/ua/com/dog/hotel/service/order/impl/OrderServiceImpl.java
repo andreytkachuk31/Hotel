@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.dog.hotel.dao.order.OrderDAO;
 import ua.com.dog.hotel.dao.room.RoomDAO;
-import ua.com.dog.hotel.model.order.Order;
+import ua.com.dog.hotel.model.entity.order.Order;
 import ua.com.dog.hotel.service.order.OrderService;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void makeOrder(Order order) {
-        roomDAO.updateRoomBusyStateOccupiedById(order.getRoomId());
+        roomDAO.updateRoomBusyStatusBookedById(order.getRoom().getId());
         orderDAO.insertOrder(order);
     }
 

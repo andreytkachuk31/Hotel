@@ -1,7 +1,8 @@
 package ua.com.dog.hotel.service.room;
 
-import ua.com.dog.hotel.model.room.Room;
-import ua.com.dog.hotel.model.room.RoomCategory;
+import ua.com.dog.hotel.model.pagination.PaginatedResults;
+import ua.com.dog.hotel.model.entity.room.Room;
+import ua.com.dog.hotel.model.pagination.Pageable;
 
 import java.util.List;
 
@@ -15,13 +16,9 @@ public interface RoomService {
 
     List<Room> selectAllRooms();
 
-    List<Room> selectAllFreeRooms();
+    PaginatedResults<Room> selectAllFreeRooms(Pageable pageable);
 
-    List<Room> selectAllFreeRooms(int sortValue);
+    List<Room> selectFreeRoomsByBookingRequestId(int bookingRequestId);
 
-    List<Room> selectAllRoomsByCategory(RoomCategory category);
-
-    List<Room> selectRoomsByBookingRequest(int category, int roomsAmount);
-
-    void updateRoomBusyStateOccupiedById(int id);
+    void updateRoomBusyStatusBookedById(int id);
 }

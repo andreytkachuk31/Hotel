@@ -19,10 +19,10 @@ public final class Path {
     public static final String PAGE_USER_ADMIN_SUCCESS = "/admin/users/userSuccess";
     public static final String PAGE_ROOM_LIST_ADMIN = "/admin/rooms/roomList";
 
-    public static final String PAGE_HOME_MANAGER = "/manager/home";
-    public static final String PAGE_BOOKING_REQUESTS_MANAGER = "/WEB-INF/jsp/manager/bookingRequestsProcessor.jsp";
-    public static final String PAGE_SUCCESS_PROCESSING_MANAGER = "/WEB-INF/jsp/manager/successProcessing.jsp";
-    public static final String PAGE_ROOM_FINDER_MANAGER = "/WEB-INF/jsp/manager/roomFinder.jsp";
+    public static final String PAGE_HOME_MANAGER = "/manager/home/home";
+    public static final String PAGE_BOOKING_REQUESTS_LIST_MANAGER = "/manager/bookingRequest/bookingRequestsProcessList";
+    public static final String PAGE_SUCCESS_PROCESSING_MANAGER = "/manager/bookingRequest/bookingRequestProcessSuccess";
+    public static final String PAGE_ROOM_FINDER_MANAGER = "/manager/bookingRequest/findingRoomList";
 
 	public static final String PAGE_HOME = "/client/home/home";
     public static final String PAGE_FREE_ROOMS = "/client/rooms/freeRooms";

@@ -1,6 +1,6 @@
 package ua.com.dog.hotel.service.user;
 
-import ua.com.dog.hotel.model.user.User;
+import ua.com.dog.hotel.model.entity.user.User;
 
 import java.util.List;
 

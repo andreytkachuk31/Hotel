@@ -15,7 +15,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import ua.com.dog.hotel.model.user.UserRole;
+import ua.com.dog.hotel.model.entity.user.UserRole;
 
 public class DomXMLParser {
 

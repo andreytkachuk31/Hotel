@@ -2,9 +2,9 @@ package ua.com.dog.hotel.web.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
-import ua.com.dog.hotel.model.user.User;
-import ua.com.dog.hotel.model.user.UserPrincipal;
-import ua.com.dog.hotel.model.user.UserRole;
+import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.entity.user.UserPrincipal;
+import ua.com.dog.hotel.model.entity.user.UserRole;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

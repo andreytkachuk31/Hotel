@@ -1,6 +1,6 @@
 package ua.com.dog.hotel.service.order;
 
-import ua.com.dog.hotel.model.order.Order;
+import ua.com.dog.hotel.model.entity.order.Order;
 
 import java.util.List;
 

@@ -10,11 +10,11 @@
         <div class="booking-request-show-all-header text-center">
 
             <h1 class="page-name">
-                <spring:message code="booking.requests"/>
+                <spring:message code="manager.booking.requests"/>
             </h1>
 
             <p class="lead">
-                On this page you can view booking requests
+                On this page you can view booking requests all users
             </p>
 
         </div>
@@ -47,6 +47,9 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr role="row">
+                            	<th class="sorting_desc" style="width: 188px;" aria-sort="descending">
+									<spring:message code="user"/>
+								</th>
                                 <th class="sorting_desc" style="width: 188px;" aria-sort="descending">
                                     <spring:message code="rooms.amount"/>
                                 </th>
@@ -62,11 +65,15 @@
                                 <th class="sorting" style="width: 147px;">
                                     <spring:message code="status"/>
                                 </th>
+                                <th class="sorting" style="width: 147px;">
+                                    <spring:message code="action"/>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="bookingRequest" items="${bookingRequests}">
                             <tr class="gradeC odd" role="row">
+                            	<td class="center">${bookingRequest.userId}</td>
                                 <td class="center">${bookingRequest.roomsAmount}</td>
                                 <td class="center">${bookingRequest.categoryName}</td>
                                 <td class="center">
@@ -77,6 +84,13 @@
                                 </td>
                                 <td class="center">
                                     <span class="label label-info">${bookingRequest.bookingRequestStatusName}</span>
+                                </td>
+                                <td class="center">
+                                    <a href="/manager/bookingRequestProcess/findRooms?bookingRequestId=${bookingRequest.id}">
+                                        <button class="btn btn-sm btn-info">
+                                            <spring:message code="find.room"/>
+                                        </button>
+                                   </a>
                                 </td>
                             </tr>
                         </c:forEach>

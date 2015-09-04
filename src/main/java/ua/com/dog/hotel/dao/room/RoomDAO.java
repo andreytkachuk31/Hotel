@@ -1,8 +1,8 @@
 package ua.com.dog.hotel.dao.room;
 
-import ua.com.dog.hotel.model.room.Room;
-import ua.com.dog.hotel.model.room.RoomBusyState;
-import ua.com.dog.hotel.model.room.RoomCategory;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.dog.hotel.model.entity.room.Room;
+import ua.com.dog.hotel.model.pagination.Pageable;
 
 import java.util.List;
 
@@ -16,13 +16,11 @@ public interface RoomDAO {
 
     List<Room> selectAllRooms();
 
-    List<Room> selectAllFreeRooms();
+    List<Room> selectAllFreeRooms(Pageable pageable);
 
-    List<Room> selectAllFreeRooms(int sortValue);
+    int selectCountAllFreeRooms();
 
-    List<Room> selectAllRoomsByCategory(RoomCategory category);
+    void updateRoomBusyStatusBookedById(int id);
 
-    List<Room> selectRoomsByBookingRequest(int category, int roomsAmount);
-
-    void updateRoomBusyStateOccupiedById(int id);
+    List<Room> selectFreeRoomsByBookingRequest(BookingRequest bookingRequest);
 }

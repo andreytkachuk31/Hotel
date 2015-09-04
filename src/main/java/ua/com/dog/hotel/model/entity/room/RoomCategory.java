@@ -1,4 +1,4 @@
-package ua.com.dog.hotel.model.room;
+package ua.com.dog.hotel.model.entity.room;
 
 public enum RoomCategory {
 

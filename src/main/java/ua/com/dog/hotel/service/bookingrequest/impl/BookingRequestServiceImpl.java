@@ -2,10 +2,9 @@ package ua.com.dog.hotel.service.bookingrequest.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import ua.com.dog.hotel.dao.bookingrequest.BookingRequestDAO;
-import ua.com.dog.hotel.model.bookingrequest.BookingRequest;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequest;
 import ua.com.dog.hotel.service.bookingrequest.BookingRequestService;
 
 import java.util.List;
@@ -27,7 +26,22 @@ public class BookingRequestServiceImpl implements BookingRequestService {
     }
 
     @Override
+    public BookingRequest selectBookingRequestsById(int id) {
+        return bookingRequestDAO.selectBookingRequestsById(id);
+    }
+
+    @Override
     public List<BookingRequest> selectBookingRequestsByUserId(int userId) {
         return bookingRequestDAO.selectBookingRequestsByUserId(userId);
+    }
+
+    @Override
+    public List<BookingRequest> selectAllBookingRequests() {
+        return bookingRequestDAO.selectAllBookingRequests();
+    }
+
+    @Override
+    public void updateBookingRequestStatusById(int id) {
+        bookingRequestDAO.updateBookingRequestStatusById(id);
     }
 }

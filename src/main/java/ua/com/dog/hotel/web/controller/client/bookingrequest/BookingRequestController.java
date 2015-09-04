@@ -10,11 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.com.dog.hotel.model.bookingrequest.BookingRequest;
-import ua.com.dog.hotel.model.bookingrequest.BookingRequestStatus;
-import ua.com.dog.hotel.model.room.RoomCategory;
-import ua.com.dog.hotel.model.user.User;
-import ua.com.dog.hotel.model.user.UserPrincipal;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.dog.hotel.model.entity.bookingrequest.BookingRequestStatus;
+import ua.com.dog.hotel.model.entity.room.RoomCategory;
+import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.entity.user.UserPrincipal;
 import ua.com.dog.hotel.service.bookingrequest.BookingRequestService;
 import ua.com.dog.hotel.web.validator.client.BookingRequestValidator;
 

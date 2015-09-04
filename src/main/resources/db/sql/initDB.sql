@@ -15,14 +15,14 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 
-CREATE TABLE IF NOT EXISTS roles (
+CREATE TABLE IF NOT EXISTS user_roles (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(20) NOT NULL,
   PRIMARY KEY (id),
   UNIQUE INDEX name_UNIQUE (name ASC)
  );
 
-CREATE TABLE IF NOT EXISTS statuses (
+CREATE TABLE IF NOT EXISTS user_status (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(10) NOT NULL,
   PRIMARY KEY (id),
@@ -35,13 +35,13 @@ CREATE TABLE IF NOT EXISTS statuses (
   place_amount INT NOT NULL,
   category_id INT NOT NULL,
   price INT NOT NULL,
-  busy_state INT NOT NULL,
+  busy_status INT NOT NULL,
   PRIMARY KEY (id),
   UNIQUE INDEX number_UNIQUE (number ASC)
 );
 
 
-CREATE TABLE IF NOT EXISTS categories (
+CREATE TABLE IF NOT EXISTS room_categories (
   id INT(11) NOT NULL AUTO_INCREMENT,
   room_category INT NOT NULL,
   PRIMARY KEY (id),
@@ -72,7 +72,7 @@ CREATE TABLE booking_requests (
   category_id INT NULL,
   date_check_in DATE NULL,
   date_check_out DATE NULL,
-  status_id INT NULL,
+  status INT NULL,
   PRIMARY KEY (id)
 );
 

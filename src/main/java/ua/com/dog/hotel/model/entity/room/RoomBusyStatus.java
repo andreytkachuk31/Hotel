@@ -1,14 +1,14 @@
-package ua.com.dog.hotel.model.room;
+package ua.com.dog.hotel.model.entity.room;
 
 /**
  * Status entity.
  */
-public enum RoomBusyState {
-    FREE(0), RESERVED(1), OCCUPIED(2);
+public enum RoomBusyStatus {
+    FREE(0), BOOKED(1);
 
     private final int statusId;
 
-    private RoomBusyState(final int statusId) {
+    private RoomBusyStatus(final int statusId) {
         this.statusId = statusId;
     }
 
@@ -16,8 +16,8 @@ public enum RoomBusyState {
         return statusId;
     }
 
-    public static RoomBusyState valueOf(int value) {
-        for (RoomBusyState status : RoomBusyState.values()) {
+    public static RoomBusyStatus valueOf(int value) {
+        for (RoomBusyStatus status : RoomBusyStatus.values()) {
             if (status.getStatusId() == value) {
                 return status;
             }

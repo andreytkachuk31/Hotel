@@ -6,19 +6,19 @@ INSERT INTO users VALUES(3, 'sidorov','sidorov','Sidorov','Aleksandr', 3, 1);
 INSERT INTO users VALUES(4, 'manager','manager','Tkachuk','Andrii', 2, 1);
 INSERT INTO users VALUES(5, 'admin','admin','Geichenko','Iegor', 1, 1);
 
-INSERT INTO roles VALUES (1, 'ROLE_ADMIN');
-INSERT INTO roles VALUES (2, 'ROLE_MANAGER');
-INSERT INTO roles VALUES (3, 'ROLE_CLIENT');
+INSERT INTO user_roles VALUES (1, 'ROLE_ADMIN');
+INSERT INTO user_roles VALUES (2, 'ROLE_MANAGER');
+INSERT INTO user_roles VALUES (3, 'ROLE_CLIENT');
 
-INSERT INTO statuses VALUES (1, 'active');
-INSERT INTO statuses VALUES (2, 'blocked');
-INSERT INTO statuses VALUES (3, 'deleted');
+INSERT INTO user_status VALUES (1, 'active');
+INSERT INTO user_status VALUES (2, 'blocked');
+INSERT INTO user_status VALUES (3, 'deleted');
 	
-INSERT INTO categories VALUES (1, 1);
-INSERT INTO categories VALUES (2, 2);
-INSERT INTO categories VALUES (3, 3);
-INSERT INTO categories VALUES (4, 4);
-INSERT INTO categories VALUES (5, 5);
+INSERT INTO room_categories VALUES (1, 1);
+INSERT INTO room_categories VALUES (2, 2);
+INSERT INTO room_categories VALUES (3, 3);
+INSERT INTO room_categories VALUES (4, 4);
+INSERT INTO room_categories VALUES (5, 5);
 	
 INSERT INTO rooms VALUES(1,5,1,1,200,0);
 INSERT INTO rooms VALUES(2,7,1,1,400,0);
