@@ -1,6 +1,8 @@
 package ua.com.dog.hotel.model.entity.bookingrequest;
 
+import ua.com.dog.hotel.model.entity.room.Room;
 import ua.com.dog.hotel.model.entity.room.RoomCategory;
+import ua.com.dog.hotel.model.entity.user.User;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,13 +13,13 @@ public class BookingRequest implements Serializable {
 	private static final long serialVersionUID = 4674969354906808505L;
 
 	private int id;
-	private int userId;
-    private int roomId;
+	private User user;
+    private Room room;
 	private int roomsAmount;
 	private Date dateCheckIn;
 	private Date dateCheckOut;
-	private int categoryId;
-	private int statusId;
+	private RoomCategory roomCategory;
+	private BookingRequestStatus status;
 
     public int getId() {
         return id;
@@ -27,20 +29,20 @@ public class BookingRequest implements Serializable {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
-    public int getRoomId() {
-        return roomId;
+    public User getUser() {
+        return user;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getRoomsAmount() {
@@ -67,47 +69,47 @@ public class BookingRequest implements Serializable {
         this.dateCheckOut = dateCheckOut;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public RoomCategory getRoomCategory() {
+        return roomCategory;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setRoomCategory(RoomCategory roomCategory) {
+        this.roomCategory = roomCategory;
     }
 
-    public int getStatusId() {
-        return statusId;
+    public BookingRequestStatus getStatus() {
+        return status;
     }
 
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
+    public void setStatus(BookingRequestStatus status) {
+        this.status = status;
     }
 
     public String getCategoryName() {
-        return RoomCategory.valueOf(categoryId).getName();
+        return roomCategory.getName();
     }
 
     public String getBookingRequestStatusName() {
-        return BookingRequestStatus.valueOf(statusId).getName();
+        return status.getName();
     }
 
     @Override
     public String toString() {
         return "BookingRequest {" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", roomId=" + roomId +
+                ", user=" + user +
+                ", room=" + room +
                 ", roomsAmount=" + roomsAmount +
                 ", dateCheckIn=" + dateCheckIn +
                 ", dateCheckOut=" + dateCheckOut +
-                ", categoryId=" + categoryId +
-                ", statusId=" + statusId +
+                ", roomCategory=" + roomCategory +
+                ", status=" + status +
                 "}";
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, roomId, roomsAmount, dateCheckIn, dateCheckOut, categoryId, statusId);
+        return Objects.hash(id, user, room, roomsAmount, dateCheckIn, dateCheckOut, roomCategory, status);
     }
 
     @Override
@@ -118,12 +120,12 @@ public class BookingRequest implements Serializable {
         BookingRequest other = (BookingRequest) obj;
 
         return Objects.equals(id, other.id)
-            && Objects.equals(userId, other.userId)
-            && Objects.equals(roomId, other.roomId)
+            && Objects.equals(user, other.user)
+            && Objects.equals(room, other.room)
             && Objects.equals(roomsAmount, other.roomsAmount)
             && Objects.equals(dateCheckIn, other.dateCheckIn)
             && Objects.equals(dateCheckOut, other.dateCheckOut)
-            && Objects.equals(categoryId, other.categoryId)
-            && Objects.equals(statusId, other.statusId);
+            && Objects.equals(roomCategory, other.roomCategory)
+            && Objects.equals(status, other.status);
     }
 }

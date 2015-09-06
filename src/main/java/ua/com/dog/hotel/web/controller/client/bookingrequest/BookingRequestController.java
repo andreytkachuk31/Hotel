@@ -74,17 +74,18 @@ public class BookingRequestController {
             User user = getCurrentUser();
 
             BookingRequest bookingRequest = new BookingRequest();
-            bookingRequest.setRoomId(0);
-            bookingRequest.setUserId(user.getId());
-            bookingRequest.setCategoryId(roomCategory);
+            bookingRequest.setRoom(null);
+            bookingRequest.setUser(user);
+            bookingRequest.setRoomCategory(RoomCategory.valueOf(roomCategory));
             bookingRequest.setRoomsAmount(roomsAmount);
             bookingRequest.setDateCheckIn(dateCheckIn);
             bookingRequest.setDateCheckOut(dateCheckOut);
-            bookingRequest.setStatusId(BookingRequestStatus.PROGRESS.getValue());
+            bookingRequest.setStatus(BookingRequestStatus.PROGRESS);
 
             bookingRequestService.makeBookingRequest(bookingRequest);
 
             return PAGE_BOOKING_REQUEST_SUCCESS;
+
         }
     }
 

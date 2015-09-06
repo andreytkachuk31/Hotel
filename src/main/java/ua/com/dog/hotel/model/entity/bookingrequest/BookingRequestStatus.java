@@ -1,7 +1,7 @@
 package ua.com.dog.hotel.model.entity.bookingrequest;
 
 public enum BookingRequestStatus {
-	PROGRESS(1, "progress"), PROCESSED(2, "processed"), BOOKED(3, "booked"), PAID(4, "paid");
+	PROGRESS(1, "progress"), BOOKED(2, "booked"), PAID(3, "paid");
 
 	private final String name;
 	private final int value;

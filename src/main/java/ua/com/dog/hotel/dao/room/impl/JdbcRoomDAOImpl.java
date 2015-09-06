@@ -73,7 +73,7 @@ public class JdbcRoomDAOImpl implements RoomDAO {
     public List<Room> selectFreeRoomsByBookingRequest(BookingRequest bookingRequest) {
         return jdbcTemplate.query(
                  "SELECT * FROM rooms WHERE busy_status=? AND category_id=? AND place_amount=?",
-                new Object[]{RoomBusyStatus.FREE.getStatusId(), bookingRequest.getCategoryId(), bookingRequest.getRoomsAmount()},
+                new Object[]{RoomBusyStatus.FREE.getStatusId(), bookingRequest.getRoomCategory().getValue(), bookingRequest.getRoomsAmount()},
                 new RoomRowMapper());
     }
 }

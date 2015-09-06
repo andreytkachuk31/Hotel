@@ -10,11 +10,6 @@ public enum UserRole implements Serializable {
 	private UserRole(int roleId) {
 		this.roleId = roleId;
 	}
-
-	public static UserRole getRole(User user) {
-		int roleId = user.getRoleId();
-		return UserRole.values()[roleId];
-	}
 	
 	public static UserRole valueOf(int value) {
 		for (UserRole role : UserRole.values()) {

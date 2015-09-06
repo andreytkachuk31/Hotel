@@ -70,8 +70,8 @@ public class Order implements Serializable {
 	public String toString() {
 		return "Order {" +
                 "id=" + id +
-                ", userId=" + user.getId() +
-                ", roomId=" + room.getId() +
+                ", user=" + user +
+                ", room=" + room +
                 ", dateCheckIn=" + dateCheckIn +
                 ", dateCheckOut=" + dateCheckOut +
                 ", bill=" + bill +
@@ -80,7 +80,7 @@ public class Order implements Serializable {
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(id, room.getId(), user.getId(), dateCheckIn, dateCheckOut, bill);
+        return Objects.hash(id, room, user, dateCheckIn, dateCheckOut, bill);
 	}
 
 	@Override
@@ -91,8 +91,8 @@ public class Order implements Serializable {
 		Order other = (Order) obj;
 
         return Objects.equals(id, other.id)
-            && Objects.equals(room.getId(), other.room.getId())
-            && Objects.equals(user.getId(), other.user.getId())
+            && Objects.equals(room, other.room)
+            && Objects.equals(user, other.user)
             && Objects.equals(dateCheckIn, other.dateCheckIn)
             && Objects.equals(dateCheckOut, other.dateCheckOut)
             && Objects.equals(bill, other.bill);

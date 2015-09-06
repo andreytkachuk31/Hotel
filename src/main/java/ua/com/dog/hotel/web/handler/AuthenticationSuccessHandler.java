@@ -22,7 +22,7 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
         User user = getCurrentUser(authentication);
 
-        switch (UserRole.valueOf(user.getRoleId())) {
+        switch (user.getRole()) {
             case ROLE_ADMIN:
                 setDefaultTargetUrl("/admin/home");
                 break;

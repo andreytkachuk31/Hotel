@@ -60,7 +60,7 @@ public class BookingRequestProcessController {
 
         Order order = new Order();
         order.setRoom(room);
-        //order.setUser(bookingRequest.getUser());
+        order.setUser(bookingRequest.getUser());
         order.setDateCheckIn(dateCheckIn);
         order.setDateCheckOut(dateCheckOut);
         order.setBill(daysBooking * room.getPrice());

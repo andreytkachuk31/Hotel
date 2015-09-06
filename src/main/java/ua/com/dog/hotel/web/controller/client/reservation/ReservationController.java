@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.dog.hotel.model.entity.order.Order;
 import ua.com.dog.hotel.model.entity.room.Room;
+import ua.com.dog.hotel.model.entity.room.RoomBusyStatus;
 import ua.com.dog.hotel.model.entity.user.User;
 import ua.com.dog.hotel.model.entity.user.UserPrincipal;
 import ua.com.dog.hotel.service.order.OrderService;
@@ -99,7 +100,7 @@ public class ReservationController {
     public String reservationConfirmRoom(final HttpSession session, final Model model) {
         Order order = (Order) session.getAttribute("order");
         Room room = roomService.selectRoomById(order.getRoom().getId());
-        if (room.getBusyStatus().getStatusId() != 1 && room.getBusyStatus().getStatusId() != 2) {
+        if (room.getBusyStatus().equals(RoomBusyStatus.FREE)) {
             model.addAttribute("status", "SUCCESS");
             orderService.makeOrder(order);
             return PAGE_RESERVATION;

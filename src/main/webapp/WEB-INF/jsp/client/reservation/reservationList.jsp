@@ -1,4 +1,3 @@
-<%@ page import="ua.com.dog.hotel.model.room.RoomCategory" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layout" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -49,7 +48,7 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr role="row">
-                                <th class="sorting_desc" style="width: 188px;" aria-sort="descending">
+                                <th class="sorting" style="width: 188px;">
                                     <spring:message code="rooms.amount"/>
                                 </th>
                                 <th class="sorting" style="width: 147px;">

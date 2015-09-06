@@ -50,9 +50,9 @@
                            placeholder="<spring:message code="confirm.password"/>"/>
                 </c:if>
                 <select name="role_id" class="input-block-level">
-                    <option value="1" ${user.roleId == 1 ? 'selected' : ''}>ROLE_ADMIN</option>
-                    <option value="2" ${user.roleId == 2 ? 'selected' : ''}>ROLE_MANAGER</option>
-                    <option value="3" ${user.roleId == 3 ? 'selected' : ''}>ROLE_CLIENT</option>
+                    <option value="1" ${user.role.roleId == 1 ? 'selected' : ''}>ROLE_ADMIN</option>
+                    <option value="2" ${user.role.roleId == 2 ? 'selected' : ''}>ROLE_MANAGER</option>
+                    <option value="3" ${user.role.roleId == 3 ? 'selected' : ''}>ROLE_CLIENT</option>
                 </select>
                 <input type="hidden" name="id" value="${user.id}"/>
                 <button class="btn btn-large btn-primary" type="submit">${actionLabel}</button>

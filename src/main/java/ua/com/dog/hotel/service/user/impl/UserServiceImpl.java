@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void blockUser(int id) {
         User user = selectUserById(id);
-        user.setStatusId(UserStatus.BLOCKED.getStatusId());
+        user.setStatus(UserStatus.BLOCKED);
         userDAO.updateUser(user);
     }
 
@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void unBlockUser(int id) {
         User user = selectUserById(id);
-        user.setStatusId(UserStatus.ACTIVE.getStatusId());
+        user.setStatus(UserStatus.ACTIVE);
         userDAO.updateUser(user);
     }
 
@@ -94,7 +94,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void register(User user) {
-        user.setRoleId(UserRole.ROLE_CLIENT.getRoleId());
+        user.setRole(UserRole.ROLE_CLIENT);
         insertUser(user);
     }
 
@@ -116,6 +116,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private UserPrincipal buildUserPrincipalFromUser(User user) {
-        return new UserPrincipal(user, user.getLogin(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(UserRole.valueOf(user.getRoleId()).name())));
+        return new UserPrincipal(user, user.getLogin(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole().name())));
     }
 }

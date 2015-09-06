@@ -47,10 +47,10 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr role="row">
-                            	<th class="sorting_desc" style="width: 188px;" aria-sort="descending">
+                            	<th class="sorting" style="width: 188px;">
 									<spring:message code="user"/>
 								</th>
-                                <th class="sorting_desc" style="width: 188px;" aria-sort="descending">
+                                <th class="sorting" style="width: 188px;">
                                     <spring:message code="rooms.amount"/>
                                 </th>
                                 <th class="sorting" style="width: 147px;">
@@ -73,7 +73,7 @@
                         <tbody>
                         <c:forEach var="bookingRequest" items="${bookingRequests}">
                             <tr class="gradeC odd" role="row">
-                            	<td class="center">${bookingRequest.userId}</td>
+                            	<td class="center">${bookingRequest.user.login}</td>
                                 <td class="center">${bookingRequest.roomsAmount}</td>
                                 <td class="center">${bookingRequest.categoryName}</td>
                                 <td class="center">

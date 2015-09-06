@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.entity.user.UserRole;
 import ua.com.dog.hotel.model.entity.user.UserStatus;
 import ua.com.dog.hotel.service.user.UserService;
 import ua.com.dog.hotel.web.validator.admin.AdminUserValidator;
@@ -73,7 +74,7 @@ public class AdminUserController {
             user.setLastName(lastName);
             user.setLogin(login);
             user.setPassword(password);
-            user.setRoleId(roleId);
+            user.setRole(UserRole.valueOf(roleId));
 
             userService.insertUser(user);
 
@@ -102,8 +103,8 @@ public class AdminUserController {
             user.setId(id);
             user.setFirstName(firstName);
             user.setLastName(lastName);
-            user.setStatusId(UserStatus.ACTIVE.getStatusId());
-            user.setRoleId(roleId);
+            user.setStatus(UserStatus.ACTIVE);
+            user.setRole(UserRole.valueOf(roleId));
 
             userService.updateUser(user);
             return PAGE_USER_ADMIN_SUCCESS;

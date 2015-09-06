@@ -71,16 +71,16 @@ public class Room implements Serializable {
 		return "Room {" +
 				"id=" + id +
 				", number=" + number +
-				", placeAmount=" + placeAmount +
-				", categoryId=" + roomCategory.getValue() +
+				", placeAmount==" + placeAmount +
+				", roomCategory=" + roomCategory +
 				", price=" + price +
-				", busyStateId=" + busyStatus.getStatusId() +
+				", busyStateId=" + busyStatus +
 				"}";
 	}
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(id, number, placeAmount, roomCategory.getValue(), price, busyStatus.getStatusId());
+        return Objects.hash(id, number, placeAmount, roomCategory, price, busyStatus);
 	}
 
 	@Override
@@ -93,9 +93,9 @@ public class Room implements Serializable {
         return Objects.equals(id, other.id)
             && Objects.equals(number, other.number)
             && Objects.equals(placeAmount, other.placeAmount)
-            && Objects.equals(roomCategory.getValue(), roomCategory.getValue())
+            && Objects.equals(roomCategory, roomCategory)
             && Objects.equals(price, other.price)
-            && Objects.equals(busyStatus.getStatusId(), other.busyStatus.getStatusId());
+            && Objects.equals(busyStatus, other.busyStatus);
 	}
 
 }

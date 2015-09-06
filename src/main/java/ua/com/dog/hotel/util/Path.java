@@ -28,7 +28,7 @@ public final class Path {
     public static final String PAGE_FREE_ROOMS = "/client/rooms/freeRooms";
 	public static final String PAGE_BOOKING_REQUEST = "/client/bookingRequest/bookingRequest";
     public static final String PAGE_BOOKING_REQUEST_LIST = "/client/bookingRequest/bookingRequestList";
-    public static final String PAGE_BOOKING_REQUEST_SUCCESS = "/common/inform/success";
+    public static final String PAGE_BOOKING_REQUEST_SUCCESS = "/client/bookingRequest/bookingRequestSuccess";
 	public static final String PAGE_RESERVATION = "/client/reservation/reservation";
     public static final String PAGE_RESERVATION_LIST = "/client/reservation/reservationList";
 }

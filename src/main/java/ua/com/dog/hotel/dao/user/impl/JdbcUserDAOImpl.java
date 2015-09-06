@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.dog.hotel.dao.user.UserDAO;
 import ua.com.dog.hotel.model.entity.user.User;
+import ua.com.dog.hotel.model.rowmapper.UserRowMapper;
 
 import java.util.List;
 
@@ -28,25 +29,25 @@ public class JdbcUserDAOImpl implements UserDAO {
                 user.getLastName(),
                 user.getLogin(),
                 user.getPassword(),
-                user.getRoleId());
+                user.getRole().getRoleId());
     }
 
     @Override
     @Cacheable("hotelCache")
     public User selectUserByLogin(String login) {
-        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE login=?", new Object[]{login}, new BeanPropertyRowMapper<User>(User.class));
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE login=?", new Object[]{login}, new UserRowMapper());
     }
 
     @Override
     @Cacheable("hotelCache")
     public User selectUserById(int id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<User>(User.class));
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE id=?", new Object[]{id}, new UserRowMapper());
     }
 
     @Override
     @Cacheable("hotelCache")
     public List<User> selectAllUsers() {
-        return jdbcTemplate.query("SELECT * FROM users", new BeanPropertyRowMapper<User>(User.class));
+        return jdbcTemplate.query("SELECT * FROM users", new UserRowMapper());
     }
 
     @Override
@@ -55,8 +56,8 @@ public class JdbcUserDAOImpl implements UserDAO {
                 "UPDATE users SET first_name=?, last_name=?, role_id=?, status_id=? WHERE id=?",
                 user.getFirstName(),
                 user.getLastName(),
-                user.getRoleId(),
-                user.getStatusId(),
+                user.getRole().getRoleId(),
+                user.getStatus().getStatusId(),
                 user.getId());
     }
 

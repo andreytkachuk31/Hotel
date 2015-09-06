@@ -17,8 +17,8 @@ public class User implements Serializable {
     private String password;
     private String firstName;
     private String lastName;
-    private int roleId;
-    private int statusId;
+    private UserRole role;
+    private UserStatus status;
 
     public int getId() {
         return id;
@@ -60,40 +60,40 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public int getRoleId() {
-        return roleId;
+    public UserRole getRole() {
+        return role;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
     }
 
     public String getRoleName() {
-        return UserRole.valueOf(roleId).name();
-    }
-
-    public int getStatusId() {
-        return statusId;
-    }
-
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
+        return role.name();
     }
 
     public String getStatusName() {
-        return UserStatus.valueOf(statusId).name();
+        return status.name();
     }
 
     public boolean isActive() {
-        return UserStatus.ACTIVE.equals(UserStatus.valueOf(statusId));
+        return UserStatus.ACTIVE.equals(status);
     }
 
     public boolean isBlocked() {
-        return UserStatus.BLOCKED.equals(UserStatus.valueOf(statusId));
+        return UserStatus.BLOCKED.equals(status);
     }
 
     public boolean isDeleted() {
-        return UserStatus.DELETED.equals(UserStatus.valueOf(statusId));
+        return UserStatus.DELETED.equals(status);
     }
 
     @Override
@@ -103,14 +103,14 @@ public class User implements Serializable {
                 ", login=" + login +
                 ", firstName=" + firstName +
                 ", lastName=" + lastName +
-                ", roleId=" + roleId +
-                ", statusId=" + statusId +
+                ", roleId=" + role +
+                ", statusId=" + status +
                 "}";
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, login, password, roleId, statusId);
+        return Objects.hash(id, firstName, lastName, login, password, role, status);
     }
 
     @Override
@@ -125,7 +125,7 @@ public class User implements Serializable {
             && Objects.equals(lastName, other.lastName)
             && Objects.equals(login, other.login)
             && Objects.equals(password, other.password)
-            && Objects.equals(roleId, other.roleId)
-            && Objects.equals(statusId, other.statusId);
+            && Objects.equals(role, other.role)
+            && Objects.equals(status, other.status);
     }
 }
