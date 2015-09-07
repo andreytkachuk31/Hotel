@@ -38,7 +38,7 @@
     <beans:bean id="webexpressionHandler"
                 class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
 
-    <beans:bean id="authenticationSuccessHandler" class="ua.com.dog.hotel.web.handler.AuthenticationSuccessHandler"/>
-    <beans:bean id="authenticationFailureHandler" class="ua.com.dog.hotel.web.handler.AuthenticationFailureHandler"/>
+    <beans:bean id="authenticationSuccessHandler" class="ua.com.hotel.web.handler.AuthenticationSuccessHandler"/>
+    <beans:bean id="authenticationFailureHandler" class="ua.com.hotel.web.handler.AuthenticationFailureHandler"/>
 
 </beans:beans>

@@ -22,7 +22,7 @@
     </listener>
 
     <listener>
-        <listener-class>ua.com.dog.hotel.web.listener.ContextListener</listener-class>
+        <listener-class>ua.com.hotel.web.listener.ContextListener</listener-class>
     </listener>
 
     <filter>
