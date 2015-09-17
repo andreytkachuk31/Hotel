@@ -13,8 +13,8 @@
 
     <tx:annotation-driven transaction-manager="jdbcTransactionManager"/>
 
-    <context:component-scan base-package="ua.com.dog.hotel.dao"/>
-    <context:component-scan base-package="ua.com.dog.hotel.service"/>
+    <context:component-scan base-package="ua.com.hotel.dao"/>
+    <context:component-scan base-package="ua.com.hotel.service"/>
 
     <!-- DATASOURCE -->
 

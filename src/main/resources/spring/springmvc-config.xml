@@ -13,7 +13,7 @@
 
     <mvc:annotation-driven/>
 
-    <context:component-scan  base-package="ua.com.dog.hotel.web.controller"/>
+    <context:component-scan  base-package="ua.com.hotel.web.controller"/>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
