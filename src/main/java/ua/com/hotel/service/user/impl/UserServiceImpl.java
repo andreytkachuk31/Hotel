@@ -40,6 +40,31 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public void register(User user) {
+        user.setRole(UserRole.ROLE_CLIENT);
+        insertUser(user);
+    }
+
+    @Override
+    public User selectUserByLogin(String login) {
+        try {
+            return userDAO.selectUserByLogin(login);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public User selectUserById(int id) {
+        return userDAO.selectUserById(id);
+    }
+
+    @Override
+    public List<User> selectAllUsers() {
+        return userDAO.selectAllUsers();
+    }
+
+    @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void insertUser(User user) {
         userDAO.insertUser(user);
@@ -71,31 +96,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         User user = selectUserById(id);
         user.setStatus(UserStatus.ACTIVE);
         userDAO.updateUser(user);
-    }
-
-    @Override
-    public User selectUserByLogin(String login) {
-        try {
-            return userDAO.selectUserByLogin(login);
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-        }
-    }
-
-    @Override
-    public User selectUserById(int id) {
-        return userDAO.selectUserById(id);
-    }
-
-    @Override
-    public List<User> selectAllUsers() {
-        return userDAO.selectAllUsers();
-    }
-
-    @Override
-    public void register(User user) {
-        user.setRole(UserRole.ROLE_CLIENT);
-        insertUser(user);
     }
 
     @Override

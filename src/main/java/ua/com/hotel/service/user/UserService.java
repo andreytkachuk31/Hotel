@@ -11,9 +11,15 @@ import java.util.List;
  */
 public interface UserService {
 
+    boolean login(String login, String password);
+
     void register(User user);
 
-    boolean login(String login, String password);
+    User selectUserByLogin(String login);
+
+    User selectUserById(int id);
+
+    List<User> selectAllUsers();
 
     void insertUser(User user);
 
@@ -24,12 +30,6 @@ public interface UserService {
     void blockUser(int id);
 
     void unBlockUser(int id);
-
-    User selectUserByLogin(String login);
-
-    User selectUserById(int id);
-
-    List<User> selectAllUsers();
 
     boolean isUserExist(String login);
 }
