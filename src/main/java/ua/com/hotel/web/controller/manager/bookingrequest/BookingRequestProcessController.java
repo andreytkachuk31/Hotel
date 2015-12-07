@@ -14,7 +14,7 @@ import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.service.bookingrequest.BookingRequestService;
 import ua.com.hotel.service.order.OrderService;
 import ua.com.hotel.service.room.RoomService;
-import ua.com.hotel.util.Path;
+import ua.com.hotel.web.util.Path;
 
 import java.util.Date;
 import java.util.List;

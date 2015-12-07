@@ -1,4 +1,4 @@
-package ua.com.hotel.util;
+package ua.com.hotel.web.util;
 
 /**
  * Path holder (jsp pages).

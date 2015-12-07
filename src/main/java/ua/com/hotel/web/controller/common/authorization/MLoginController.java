@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static ua.com.hotel.util.Path.PAGE_MLOGIN;
+import static ua.com.hotel.web.util.Path.PAGE_MLOGIN;
 
 /**
  * @author Andrii_Tkachuk

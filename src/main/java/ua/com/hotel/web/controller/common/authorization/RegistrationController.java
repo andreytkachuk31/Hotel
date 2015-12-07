@@ -13,7 +13,7 @@ import ua.com.hotel.web.validator.client.ReqistrationValidator;
 
 import javax.servlet.http.HttpSession;
 
-import static ua.com.hotel.util.Path.PAGE_REGISTRATION;
+import static ua.com.hotel.web.util.Path.PAGE_REGISTRATION;
 
 @Controller
 @RequestMapping("/registration")

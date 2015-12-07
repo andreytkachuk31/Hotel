@@ -17,11 +17,14 @@ import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.model.entity.user.UserPrincipal;
 import ua.com.hotel.service.bookingrequest.BookingRequestService;
 import ua.com.hotel.web.validator.client.BookingRequestValidator;
-import ua.com.hotel.util.Path;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+
+import static ua.com.hotel.web.util.Path.PAGE_BOOKING_REQUEST;
+import static ua.com.hotel.web.util.Path.PAGE_BOOKING_REQUEST_LIST;
+import static ua.com.hotel.web.util.Path.PAGE_BOOKING_REQUEST_SUCCESS;
 
 /**
  * @since: 10.05.15
@@ -40,14 +43,16 @@ public class BookingRequestController {
     public String showBookingRequests(final Model model) {
         User user = getCurrentUser();
         List<BookingRequest> bookingRequests = bookingRequestService.selectBookingRequestsByUserId(user.getId());
+
         model.addAttribute("bookingRequests", bookingRequests);
-        return Path.PAGE_BOOKING_REQUEST_LIST;
+
+        return PAGE_BOOKING_REQUEST_LIST;
     }
 
     @RequestMapping(value="/show", method = RequestMethod.GET)
     public String showBookingRequest(final Model model){
         model.addAttribute("categories", RoomCategory.values());
-        return Path.PAGE_BOOKING_REQUEST;
+        return PAGE_BOOKING_REQUEST;
     }
 
     @RequestMapping(value="/save", method = RequestMethod.POST)
@@ -81,8 +86,7 @@ public class BookingRequestController {
 
             bookingRequestService.makeBookingRequest(bookingRequest);
 
-            return Path.PAGE_BOOKING_REQUEST_SUCCESS;
-
+            return PAGE_BOOKING_REQUEST_SUCCESS;
         }
     }
 

@@ -106,11 +106,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 
-        User user = userDAO.selectUserByLogin(username);
+        User user = selectUserByLogin(username);
 
-        if (!user.isActive()){
-            throw new UsernameNotFoundException("User is not active");
-        }
+        if (user == null || !user.isActive())
+            throw new UsernameNotFoundException("User isn't exist or isn't active");
+
 
         return buildUserPrincipalFromUser(user);
     }

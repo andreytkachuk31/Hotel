@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.service.room.RoomService;
-import ua.com.hotel.util.Path;
+import ua.com.hotel.web.util.Path;
 
 import java.util.List;
 

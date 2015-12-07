@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.hotel.model.entity.order.Order;
 import ua.com.hotel.model.entity.room.Room;
-import ua.com.hotel.model.entity.room.RoomBusyStatus;
 import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.model.entity.user.UserPrincipal;
 import ua.com.hotel.service.order.OrderService;
@@ -25,8 +24,8 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
-import static ua.com.hotel.util.Path.PAGE_RESERVATION;
-import static ua.com.hotel.util.Path.PAGE_RESERVATION_LIST;
+import static ua.com.hotel.web.util.Path.PAGE_RESERVATION;
+import static ua.com.hotel.web.util.Path.PAGE_RESERVATION_LIST;
 
 /**
  * @author Andrii_Tkachuk
@@ -48,7 +47,9 @@ public class ReservationController {
     public String showReservationList(final Model model) {
         User user = getCurrentUser();
         List<Order> orders = orderService.selectOrdersByUserId(user.getId());
+
         model.addAttribute("orders", orders);
+
         return PAGE_RESERVATION_LIST;
     }
 
@@ -89,25 +90,19 @@ public class ReservationController {
             model.addAttribute("room", room);
             model.addAttribute("daysBooking", daysBooking);
             model.addAttribute("status", "CONFIRM");
-
-            session.setAttribute("order", order);
-
-            return PAGE_RESERVATION;
         }
+
+        return PAGE_RESERVATION;
     }
 
     @RequestMapping(value = "/confirm", method = RequestMethod.GET)
     public String reservationConfirmRoom(final HttpSession session, final Model model) {
         Order order = (Order) session.getAttribute("order");
-        Room room = roomService.selectRoomById(order.getRoom().getId());
-        if (room.getBusyStatus().equals(RoomBusyStatus.FREE)) {
-            model.addAttribute("status", "SUCCESS");
-            orderService.makeOrder(order);
-            return PAGE_RESERVATION;
-        } else {
-            session.setAttribute("error", " Requested room is not free now");
-            return "redirect:error";
-        }
+        orderService.makeOrder(order);
+
+        model.addAttribute("status", "SUCCESS");
+
+        return PAGE_RESERVATION;
     }
 
     public User getCurrentUser() {

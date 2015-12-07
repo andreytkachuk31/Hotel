@@ -10,7 +10,7 @@ import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.service.room.RoomService;
 import ua.com.hotel.model.pagination.Pageable;
-import ua.com.hotel.util.Path;
+import ua.com.hotel.web.util.Path;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 

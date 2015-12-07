@@ -1,5 +1,6 @@
 package ua.com.hotel.service.user.impl;
 
+import com.google.common.collect.Iterables;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -74,8 +75,7 @@ public class UserServiceImplTest {
 
     @Test
     public void shouldReturnFalseWhenLoginIfUserInactive() {
-        user.setStatus(BLOCKED);
-        when(userDAO.selectUserByLogin(LOGIN)).thenReturn(user);
+        mockBlockedUserByLogin();
 
         boolean isLogin = userService.login(LOGIN, PASSWORD);
 
@@ -168,8 +168,7 @@ public class UserServiceImplTest {
 
     @Test
     public void shouldDoNothingWhenBlockUserIfUserWasBlock() {
-        user.setStatus(BLOCKED);
-        when(userDAO.selectUserById(ID)).thenReturn(user);
+        mockBlockedUserById();
 
         userService.blockUser(ID);
 
@@ -178,8 +177,7 @@ public class UserServiceImplTest {
 
     @Test
     public void shouldUnBlockUserWhenUnBlockUserIfUserWasBlock() {
-        user.setStatus(BLOCKED);
-        when(userDAO.selectUserById(ID)).thenReturn(user);
+        mockBlockedUserById();
 
         userService.unBlockUser(ID);
 
@@ -206,19 +204,47 @@ public class UserServiceImplTest {
 
     @Test
     public void shouldReturnFalseWhenIsUserExistIfLoginIncorrect() {
-        when(userDAO.selectUserByLogin(LOGIN)).thenThrow(new EmptyResultDataAccessException(1));
+        when(userDAO.selectUserByLogin(INCORRECT_LOGIN)).thenThrow(new EmptyResultDataAccessException(1));
 
-        boolean isUserExist = userService.isUserExist(LOGIN);
+        boolean isUserExist = userService.isUserExist(INCORRECT_LOGIN);
 
         assertFalse(isUserExist);
     }
 
-    @Test(expected = UsernameNotFoundException.class)
-    public void shouldThrowUsernameNotFoundExceptionWhenLoadUserByUsernameIfUserInactive() {
-        user.setStatus(BLOCKED);
+    @Test
+    public void shouldReturnUserDetailsWhenLoadUserByUsernameIfLoginCorrect() {
         when(userDAO.selectUserByLogin(LOGIN)).thenReturn(user);
 
+        UserDetails userDetails = userService.loadUserByUsername(LOGIN);
+
+        assertNotNull(userDetails);
+        assertEquals(LOGIN, userDetails.getUsername());
+        assertEquals(PASSWORD, userDetails.getPassword());
+        assertEquals(ROLE_CLIENT.name(), Iterables.getOnlyElement(userDetails.getAuthorities()).getAuthority());
+    }
+
+    @Test(expected = UsernameNotFoundException.class)
+    public void shouldThrowUsernameNotFoundExceptionWhenLoadUserByUsernameIfLoginIncorrect() {
+        when(userDAO.selectUserByLogin(INCORRECT_LOGIN)).thenThrow(new EmptyResultDataAccessException(1));
+
+        userService.loadUserByUsername(INCORRECT_LOGIN);
+    }
+
+    @Test(expected = UsernameNotFoundException.class)
+    public void shouldThrowUsernameNotFoundExceptionWhenLoadUserByUsernameIfUserInactive() {
+        mockBlockedUserByLogin();
+
         userService.loadUserByUsername(LOGIN);
+    }
+
+    private void mockBlockedUserById() {
+        user.setStatus(BLOCKED);
+        when(userDAO.selectUserById(ID)).thenReturn(user);
+    }
+
+    private void mockBlockedUserByLogin() {
+        user.setStatus(BLOCKED);
+        when(userDAO.selectUserByLogin(LOGIN)).thenReturn(user);
     }
 
     private void verifyBlockedUser() {

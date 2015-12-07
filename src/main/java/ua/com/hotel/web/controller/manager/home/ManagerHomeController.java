@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import static ua.com.hotel.util.Path.PAGE_HOME_MANAGER;
+import static ua.com.hotel.web.util.Path.PAGE_HOME_MANAGER;
 
 /**
  * @author Andrii_Tkachuk

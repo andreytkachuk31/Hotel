@@ -13,7 +13,7 @@ import ua.com.hotel.model.entity.user.UserRole;
 import ua.com.hotel.model.entity.user.UserStatus;
 import ua.com.hotel.service.user.UserService;
 import ua.com.hotel.web.validator.admin.AdminUserValidator;
-import ua.com.hotel.util.Path;
+import ua.com.hotel.web.util.Path;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
