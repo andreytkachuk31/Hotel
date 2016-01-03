@@ -3,6 +3,8 @@ package ua.com.hotel.web.validator.admin;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
+import static org.apache.commons.lang3.StringUtils.EMPTY;
+
 /**
  * @author Andrii_Tkachuk
  * @since 7/17/2015
@@ -22,7 +24,7 @@ public class AdminUserValidator {
             LOG.trace("Password unconfirmed");
             return "Password unconfirmed";
         }
-        return StringUtils.EMPTY;
+        return EMPTY;
     }
 
     public String validate(String firstName, String lastName) {
@@ -30,6 +32,6 @@ public class AdminUserValidator {
             LOG.trace("Empty fields found when registrate");
             return "Empty field found. All fields must be filled";
         }
-        return StringUtils.EMPTY;
+        return EMPTY;
     }
 }

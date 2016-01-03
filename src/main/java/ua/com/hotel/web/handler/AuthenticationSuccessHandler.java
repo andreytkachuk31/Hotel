@@ -16,7 +16,6 @@ import java.io.IOException;
  */
 public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
         User user = getCurrentUser(authentication);
@@ -29,9 +28,6 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
                 setDefaultTargetUrl("/manager/home");
                 break;
             case ROLE_CLIENT:
-                setDefaultTargetUrl("/home");
-                break;
-            default:
                 setDefaultTargetUrl("/home");
                 break;
         }
