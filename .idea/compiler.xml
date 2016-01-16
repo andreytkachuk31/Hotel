@@ -22,11 +22,33 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Hotel" />
+        <module name="admin" />
+        <module name="client" />
+        <module name="core" />
+        <module name="hotel_admin" />
+        <module name="hotel_client" />
+        <module name="hotel_core" />
+        <module name="hotel_manager" />
+        <module name="hotel_release" />
+        <module name="hotel_web" />
+        <module name="hotel_web_admin" />
+        <module name="hotel_web_all" />
+        <module name="hotel_web_client" />
+        <module name="hotel_web_common" />
+        <module name="hotel_web_manager" />
+        <module name="hotel_web_release" />
+        <module name="manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Hotel" target="1.7" />
+      <module name="hotel_admin" target="1.7" />
+      <module name="hotel_client" target="1.7" />
+      <module name="hotel_core" target="1.7" />
+      <module name="hotel_manager" target="1.7" />
+      <module name="hotel_web" target="1.7" />
+      <module name="hotel_web_manager" target="1.7" />
+      <module name="manager" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

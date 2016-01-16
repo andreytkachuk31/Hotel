@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="hotel_web_release:war exploded">
+    <output-path>$PROJECT_DIR$/hotel_web_release/target/release-1.0</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="hotel_web_release/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="hotel_web_all" />
+        </element>
+      </element>
+      <element id="artifact" artifact-name="hotel_web_admin:war exploded" />
+      <element id="artifact" artifact-name="hotel_web_manager:war exploded" />
+      <element id="artifact" artifact-name="hotel_web_client:war exploded" />
+    </root>
+  </artifact>
+</component>
