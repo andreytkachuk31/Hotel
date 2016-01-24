@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="hotel_web_client:war exploded">
-    <output-path>$PROJECT_DIR$/hotel_web_client/target/client-1.0</output-path>
+    <output-path>$PROJECT_DIR$/hotel_web_client/target/web.client-1.0</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="hotel_web_client/web/Web" />
       <element id="directory" name="WEB-INF">

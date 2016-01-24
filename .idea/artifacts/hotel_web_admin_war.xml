@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="hotel_web_admin:war">
     <output-path>$PROJECT_DIR$/hotel_web_admin/target</output-path>
-    <root id="archive" name="admin-1.0.war">
+    <root id="archive" name="web.admin-1.0.war">
       <element id="artifact" artifact-name="hotel_web_admin:war exploded" />
     </root>
   </artifact>

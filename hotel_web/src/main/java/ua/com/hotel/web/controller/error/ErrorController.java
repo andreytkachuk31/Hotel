@@ -1,7 +1,8 @@
-package ua.com.hotel.web.listener;
+package ua.com.hotel.web.controller.error;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Andrii_Tkachuk
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ErrorController {
 
-    private static final String PAGE_ERROR = "/common/error/error";
+    private static final String PAGE_ERROR = "/error/error";
 
     @RequestMapping("/error")
     public String error() {

@@ -5,26 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ua.com.hotel</groupId>
-    <artifactId>release</artifactId>
+    <artifactId>web.all</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
 
     <dependencies>
         <dependency>
             <groupId>ua.com.hotel</groupId>
-            <artifactId>admin</artifactId>
+            <artifactId>web.admin</artifactId>
             <version>1.0</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>ua.com.hotel</groupId>
-            <artifactId>manager</artifactId>
+            <artifactId>web.manager</artifactId>
             <version>1.0</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>ua.com.hotel</groupId>
-            <artifactId>client</artifactId>
+            <artifactId>web.client</artifactId>
             <version>1.0</version>
             <type>war</type>
         </dependency>
@@ -40,15 +40,15 @@
                     <overlays>
                         <overlay>
                             <groupId>ua.com.hotel</groupId>
-                            <artifactId>admin</artifactId>
+                            <artifactId>web.admin</artifactId>
                         </overlay>
                         <overlay>
                             <groupId>ua.com.hotel</groupId>
-                            <artifactId>manager</artifactId>
+                            <artifactId>web.manager</artifactId>
                         </overlay>
                         <overlay>
                             <groupId>ua.com.hotel</groupId>
-                            <artifactId>client</artifactId>
+                            <artifactId>web.client</artifactId>
                         </overlay>
                     </overlays>
                 </configuration>

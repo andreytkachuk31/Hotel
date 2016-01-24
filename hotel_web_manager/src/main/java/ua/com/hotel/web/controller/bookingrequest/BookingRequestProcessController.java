@@ -1,4 +1,4 @@
-package ua.com.hotel.web.controller.manager.bookingrequest;
+package ua.com.hotel.web.controller.bookingrequest;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;

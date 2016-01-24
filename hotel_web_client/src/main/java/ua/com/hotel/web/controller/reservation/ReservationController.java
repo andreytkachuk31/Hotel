@@ -87,7 +87,10 @@ public class ReservationController {
             order.setDateCheckOut(dateCheckOut);
             order.setBill(daysBooking * room.getPrice());
 
+            session.setAttribute("order", order);
+
             model.addAttribute("room", room);
+            model.addAttribute("order", order);
             model.addAttribute("daysBooking", daysBooking);
             model.addAttribute("status", "CONFIRM");
         }
