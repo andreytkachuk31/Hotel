@@ -30,6 +30,7 @@
         <module name="hotel_core" />
         <module name="hotel_manager" />
         <module name="hotel_release" />
+        <module name="hotel_rest" />
         <module name="hotel_web" />
         <module name="hotel_web_admin" />
         <module name="hotel_web_all" />
@@ -47,6 +48,7 @@
       <module name="hotel_core" target="1.7" />
       <module name="hotel_manager" target="1.7" />
       <module name="hotel_web" target="1.7" />
+      <module name="hotel_web_common" target="1.7" />
       <module name="hotel_web_manager" target="1.7" />
       <module name="manager" target="1.7" />
     </bytecodeTargetLevel>

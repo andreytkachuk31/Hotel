@@ -12,13 +12,13 @@
     <dependencies>
         <dependency>
             <groupId>ua.com.hotel</groupId>
-            <artifactId>web</artifactId>
+            <artifactId>web.common</artifactId>
             <version>1.0</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>ua.com.hotel</groupId>
-            <artifactId>web</artifactId>
+            <artifactId>web.common</artifactId>
             <version>1.0</version>
             <type>jar</type>
             <classifier>classes</classifier>
@@ -35,7 +35,7 @@
                     <overlays>
                         <overlay>
                             <groupId>ua.com.hotel</groupId>
-                            <artifactId>web</artifactId>
+                            <artifactId>web.common</artifactId>
                         </overlay>
                     </overlays>
                 </configuration>

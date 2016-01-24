@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hotel_web_common:war">
+    <output-path>$PROJECT_DIR$/hotel_web_common/target</output-path>
+    <root id="archive" name="web.common-1.0.war">
+      <element id="artifact" artifact-name="hotel_web_common:war exploded" />
+    </root>
+  </artifact>
+</component>
