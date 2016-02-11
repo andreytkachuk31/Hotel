@@ -15,4 +15,8 @@
 
     <context:component-scan base-package="ua.com.hotel.rest"/>
 
+    <context:property-placeholder location="classpath:config/rest.properties"/>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+
 </beans>

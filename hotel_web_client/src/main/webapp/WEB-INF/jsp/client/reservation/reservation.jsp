@@ -75,7 +75,8 @@
 					</div>
 
 					<div class="order_info">
-						<h4><spring:message code="total.to.pay"/> : ${order.bill}$</h4>
+						<h4 class="inline-block"><spring:message code="total.to.pay"/> : ${order.bill}$</h4>
+                        <button class="btn btn-small btn-info"><spring:message code="convert.uah"/></button>
 					</div>
 
 					<div class="order_btn margin-bottom20">

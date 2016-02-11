@@ -1,4 +1,4 @@
-package ua.com.hotel.web.controller.client.rooms;
+package ua.com.hotel.web.controller.rooms;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

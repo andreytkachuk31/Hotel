@@ -104,12 +104,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-
         User user = selectUserByLogin(username);
 
         if (user == null || !user.isActive())
             throw new UsernameNotFoundException("User isn't exist or isn't active");
-
 
         return buildUserPrincipalFromUser(user);
     }
