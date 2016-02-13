@@ -180,6 +180,11 @@
     display: inline-block;
 }
 
+.btn-convert-position {
+   position: absolute;
+   margin: 6px 0 0 6px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;

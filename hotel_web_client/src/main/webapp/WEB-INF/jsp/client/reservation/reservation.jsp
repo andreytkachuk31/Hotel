@@ -76,7 +76,7 @@
 
 					<div class="order_info">
 						<h4 class="inline-block"><spring:message code="total.to.pay"/> : ${order.bill}$</h4>
-                        <button class="btn btn-small btn-info"><spring:message code="convert.uah"/></button>
+                        <button id="btn-convert" class="btn btn-small btn-info btn-convert-position"><spring:message code="convert.uah"/></button>
 					</div>
 
 					<div class="order_btn margin-bottom20">
@@ -104,9 +104,23 @@
 	<script type="text/javascript">
 
 		  $(function() {
-			$("#datepicker_check_in, #datepicker_check_out").datepicker({
+
+			  $("#datepicker_check_in, #datepicker_check_out").datepicker({
 				 dateFormat: "dd/mm/yy"
-			});
+			  });
+
+			  <c:if test="${status == 'CONFIRM'}">
+				  $("#btn-convert").click(function(){
+					  $.ajax({
+						  type: "GET",
+						  url: "/exchangeRate/usd/" + ${order.bill},
+						  success: function(result) {
+							  alert(result);
+						  }
+					  });
+				  });
+			  </c:if>
+
 		  });
 
 	</script>

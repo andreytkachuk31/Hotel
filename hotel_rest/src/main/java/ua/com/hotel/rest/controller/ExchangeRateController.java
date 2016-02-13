@@ -24,7 +24,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  */
 @Controller
 @RequestMapping("/exchangeRate")
-public class ExchangeRateRestController {
+public class ExchangeRateController {
 
     @Value("${exchangeRate.url.json}")
     private String exchangeRateUrl;
@@ -34,7 +34,7 @@ public class ExchangeRateRestController {
 
     @RequestMapping(value = "/usd/{value}", method = GET)
     @ResponseBody
-    public double getExchangeRateUSD(@PathVariable double value) {
+    public double convertUsdToUah(@PathVariable double value) {
         Source source = restTemplate.getForObject(exchangeRateUrl, Source.class);
 
         double exchangeRate = getAverageExchangeRateForUSD(source);
