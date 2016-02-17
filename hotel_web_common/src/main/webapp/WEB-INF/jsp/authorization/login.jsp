@@ -1,3 +1,5 @@
+<%@ page pageEncoding="utf8" %>
+
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layout" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 

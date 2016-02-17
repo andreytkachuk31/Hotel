@@ -13,7 +13,10 @@
 
     <mvc:annotation-driven/>
 
-    <context:component-scan  base-package="ua.com.hotel.web.controller"/>
+    <context:component-scan base-package="ua.com.hotel.web.ajax"/>
+    <context:component-scan base-package="ua.com.hotel.web.controller"/>
+
+    <context:property-placeholder location="classpath:config/web.properties" system-properties-mode="OVERRIDE"/>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 

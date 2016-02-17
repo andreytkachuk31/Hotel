@@ -1,3 +1,5 @@
+<%@ page pageEncoding="utf8" %>
+
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layout" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,12 +26,12 @@
 		<div class="reservation-body panel-primary text-center">
 
 			<div class="panel-heading">
-			  <h3 class="panel-title">Reservation</h3>
+			  <h3 class="panel-title"><spring:message code="reservation"/></h3>
 			</div>
 
 			<c:if test="${status == 'SAVE'}">
 				<div id="step1" class="panel-body">
-					<legend>Step 1 of 3 (Choose date for reservation)</legend>
+					<legend><spring:message code="reservation.step.1"/></legend>
 
 					<form action="/reservation/save" method="post" class="form-inline">
 
@@ -40,7 +42,7 @@
 						<input type="text" name="dateCheckOut" id="datepicker_check_out" class="date input-large margin-right10" placeholder="DD/MM/YYYY">
 
 						<input type="hidden" name="roomId" value="${roomId}"/>
-						<button type="submit" class="btn btn-large btn-primary">Next <span class="arrow-right"></span></button>
+						<button type="submit" class="btn btn-large btn-primary"><spring:message code="next"/></button>
 
 					</form>
 				</div>
@@ -48,7 +50,7 @@
 
 			<c:if test="${status == 'CONFIRM'}">
 				<div id="step2" class="panel-body">
-					<legend>Step 2 of 3 (Confirm reservation)</legend>
+					<legend><spring:message code="reservation.step.2"/></legend>
 
 					<div class="order_info">
 						<h4><spring:message code="room.category"/> : ${room.categoryName}<h4>
@@ -75,15 +77,15 @@
 					</div>
 
 					<div class="order_info">
-						<h4 class="inline-block"><spring:message code="total.to.pay"/> : ${order.bill}$</h4>
+						<h4 class="inline-block"><spring:message code="total.to.pay"/>: <span id="order_bill">${order.bill}$</span></h4>
                         <button id="btn-convert" class="btn btn-small btn-info btn-convert-position"><spring:message code="convert.uah"/></button>
 					</div>
 
 					<div class="order_btn margin-bottom20">
 						<form action="/reservation/confirm" method="get">
 							<input type="hidden" name="roomId" value="${room.id}"/>
-							<button type="submit" class="btn btn-large btn-warning" formaction="/reservation/show">Back</button>
-							<button type="submit" class="btn btn-large btn-primary" formaction="/reservation/confirm">Next</button>
+							<button type="submit" class="btn btn-large btn-warning" formaction="/reservation/show"><spring:message code="back"/></button>
+							<button type="submit" class="btn btn-large btn-primary" formaction="/reservation/confirm"><spring:message code="next"/></button>
 						<form>
 					</div>
 				</div>
@@ -91,9 +93,9 @@
 
 			<c:if test="${status == 'SUCCESS'}">
 				<div id="step2" class="panel-body">
-					<legend>Step 3 of 3 (Success reservation)</legend>
+					<legend><spring:message code="reservation.step.3"/></legend>
 
-					<h3 class="alert alert-success">Success reservation</h3>
+					<h3 class="alert alert-success"><spring:message code="reservation.success"/></h3>
 
 				</div>
 			</c:if>
@@ -110,12 +112,14 @@
 			  });
 
 			  <c:if test="${status == 'CONFIRM'}">
-				  $("#btn-convert").click(function(){
+				  $("#btn-convert").click(function() {
+					  var $self = this;
 					  $.ajax({
 						  type: "GET",
 						  url: "/exchangeRate/usd/" + ${order.bill},
 						  success: function(result) {
-							  alert(result);
+							  $("#order_bill").text(result + "₴");
+							  $("#btn-convert").prop("disabled", true);
 						  }
 					  });
 				  });
