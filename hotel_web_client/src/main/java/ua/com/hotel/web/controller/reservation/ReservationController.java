@@ -58,7 +58,7 @@ public class ReservationController {
         Pageable pageable = new Pageable(page, perPage, sort, filter);
         PaginatedResults<Order> paginatedOrders = orderService.selectOrdersByUserId(user.getId(), pageable);
 
-        model.addAttribute("paginatedOrders", paginatedOrders);
+        model.addAttribute("paginatedResults", paginatedOrders);
         model.addAttribute("pageable", pageable);
 
         return PAGE_RESERVATION_LIST;

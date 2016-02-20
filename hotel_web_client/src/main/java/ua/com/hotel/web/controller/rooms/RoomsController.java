@@ -36,7 +36,7 @@ public class RoomsController {
         Pageable pageable = new Pageable(page, perPage, sort, filter);
         PaginatedResults<Room> paginatedFreeRooms = roomService.selectAllFreeRooms(pageable);
 
-        model.addAttribute("paginatedFreeRooms", paginatedFreeRooms);
+        model.addAttribute("paginatedResults", paginatedFreeRooms);
         model.addAttribute("pageable", pageable);
 
         return PAGE_FREE_ROOMS;
