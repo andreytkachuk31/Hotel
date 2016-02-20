@@ -10,6 +10,8 @@ import ua.com.hotel.model.entity.order.Order;
 import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.model.exception.RoomAlreadyBookedException;
 import ua.com.hotel.model.exception.RoomNotFoundException;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.service.order.OrderService;
 import ua.com.hotel.service.room.RoomService;
 
@@ -52,8 +54,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> selectOrdersByUserId(int userId) {
-        return orderDAO.selectOrdersByUserId(userId);
+    public PaginatedResults<Order> selectOrdersByUserId(int userId, Pageable pageable) {
+        List<Order> orders = orderDAO.selectOrdersByUserId(userId, pageable);
+        int totalCount = orderDAO.selectCountOrdersByUserId(userId);
+        int numberOfPages = (totalCount / pageable.getPerPage()) + 1;
+        return new PaginatedResults<Order>(numberOfPages, totalCount, orders);
     }
 
     private boolean isNotExistRoom(Room room) {

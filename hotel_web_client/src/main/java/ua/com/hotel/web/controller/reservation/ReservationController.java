@@ -16,6 +16,8 @@ import ua.com.hotel.model.entity.order.Order;
 import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.model.entity.user.UserPrincipal;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.service.order.OrderService;
 import ua.com.hotel.service.room.RoomService;
 import ua.com.hotel.web.validator.client.ReservationValidator;
@@ -23,6 +25,8 @@ import ua.com.hotel.web.validator.client.ReservationValidator;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 /**
  * @author Andrii_Tkachuk
@@ -44,11 +48,17 @@ public class ReservationController {
     private OrderService orderService;
 
     @RequestMapping(value="/showList", method = RequestMethod.GET)
-    public String showReservationList(final Model model) {
+    public String showReservationList(@RequestParam(defaultValue = "1") final int page,
+                                      @RequestParam(defaultValue = "10") final int perPage,
+                                      @RequestParam(defaultValue = "bill", required = false) final String sort,
+                                      @RequestParam(defaultValue = EMPTY, required = false) final String filter,
+                                      final Model model) {
         User user = getCurrentUser();
-        List<Order> orders = orderService.selectOrdersByUserId(user.getId());
+        Pageable pageable = new Pageable(page, perPage, sort, filter);
+        PaginatedResults<Order> paginatedOrders = orderService.selectOrdersByUserId(user.getId(), pageable);
 
-        model.addAttribute("orders", orders);
+        model.addAttribute("paginatedOrders", paginatedOrders);
+        model.addAttribute("pageable", pageable);
 
         return PAGE_RESERVATION_LIST;
     }

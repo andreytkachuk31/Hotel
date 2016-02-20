@@ -3,6 +3,7 @@ package ua.com.hotel.model.rowmapper;
 import org.springframework.jdbc.core.RowMapper;
 import ua.com.hotel.model.entity.order.Order;
 import ua.com.hotel.model.entity.room.Room;
+import ua.com.hotel.model.entity.room.RoomCategory;
 import ua.com.hotel.model.entity.user.User;
 
 import java.sql.ResultSet;
@@ -35,6 +36,8 @@ public class OrderRowMapper implements RowMapper<Order> {
     private Room getRoom(ResultSet rs) throws SQLException {
         Room room = new Room();
         room.setId(rs.getInt("room_id"));
+        room.setPlaceAmount(rs.getInt("place_amount"));
+        room.setRoomCategory(RoomCategory.valueOf(rs.getInt("category_id")));
         return room;
     }
 }

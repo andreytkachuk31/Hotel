@@ -1,6 +1,8 @@
 package ua.com.hotel.service.order;
 
 import ua.com.hotel.model.entity.order.Order;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 
 import java.util.List;
 
@@ -12,6 +14,6 @@ public interface OrderService {
 
     void makeOrder(Order order);
 
-    List<Order> selectOrdersByUserId(int userId);
+    PaginatedResults<Order> selectOrdersByUserId(int userId, Pageable pageable);
 
 }

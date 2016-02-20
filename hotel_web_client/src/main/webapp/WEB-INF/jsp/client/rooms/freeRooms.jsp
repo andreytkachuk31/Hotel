@@ -129,7 +129,7 @@
 
         $(".sorting").click(function() {
             var perPage = $("#perPage").val();
-            var page = ${pageable.page};
+            var page = '${pageable.page}';
             var sort = $(this).data("sort");
             var filter = '${pageable.filter}';
             submit(perPage, page, sort, filter)

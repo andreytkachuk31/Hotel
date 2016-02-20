@@ -12,6 +12,8 @@ import ua.com.hotel.model.entity.room.Room;
 import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.model.exception.RoomAlreadyBookedException;
 import ua.com.hotel.model.exception.RoomNotFoundException;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.service.room.RoomService;
 
 import java.util.Arrays;
@@ -19,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static ua.com.hotel.model.entity.room.RoomBusyStatus.BOOKED;
@@ -93,12 +96,13 @@ public class OrderServiceImplTest {
 
     @Test
     public void shouldReturnOrdersWhenSelectOrdersByUserId() {
+        Pageable pageable = new Pageable();
         List<Order> ordersExpected = Arrays.asList(order);
-        when(orderDAO.selectOrdersByUserId(USER_ID)).thenReturn(ordersExpected);
+        when(orderDAO.selectOrdersByUserId(USER_ID, pageable)).thenReturn(ordersExpected);
 
-        List<Order> ordersActual = orderService.selectOrdersByUserId(USER_ID);
+        PaginatedResults<Order> paginatedOrdersActual = orderService.selectOrdersByUserId(USER_ID, pageable);
 
-        assertEquals(ordersExpected, ordersActual);
+        assertEquals(ordersExpected, paginatedOrdersActual.getResults());
 
     }
 
