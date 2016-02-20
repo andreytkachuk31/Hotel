@@ -2,10 +2,9 @@ package ua.com.hotel.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import ua.com.hotel.rest.model.Currencies;
 import ua.com.hotel.rest.model.CurrencyType;
@@ -13,7 +12,6 @@ import ua.com.hotel.rest.model.Organization;
 import ua.com.hotel.rest.model.Source;
 
 import static com.google.common.collect.Iterables.getFirst;
-import static com.google.common.collect.Iterables.getOnlyElement;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
@@ -22,7 +20,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * @author: Андрей
  * @since: 24.01.16
  */
-@Controller
+@RestController
 @RequestMapping("/exchangeRate")
 public class ExchangeRateController {
 
@@ -33,7 +31,6 @@ public class ExchangeRateController {
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/usd/{value}", method = GET)
-    @ResponseBody
     public double convertUsdToUah(@PathVariable double value) {
         Source source = restTemplate.getForObject(exchangeRateUrl, Source.class);
 

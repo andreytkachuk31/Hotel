@@ -13,7 +13,6 @@ import ua.com.hotel.service.room.RoomService;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
-
 /**
  * @since: 05.04.15
  * @author: Андрей
@@ -33,10 +32,13 @@ public class RoomsController {
                                 @RequestParam(defaultValue = "price", required = false) final String sort,
                                 @RequestParam(defaultValue = EMPTY, required = false) final String filter,
                                 final Model model) {
+
         Pageable pageable = new Pageable(page, perPage, sort, filter);
         PaginatedResults<Room> paginatedFreeRooms = roomService.selectAllFreeRooms(pageable);
+
         model.addAttribute("paginatedFreeRooms", paginatedFreeRooms);
         model.addAttribute("pageable", pageable);
+
         return PAGE_FREE_ROOMS;
     }
 }

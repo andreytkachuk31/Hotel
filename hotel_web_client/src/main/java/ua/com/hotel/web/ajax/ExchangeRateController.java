@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-@RequestMapping("/exchangeRate")
 @Controller
+@RequestMapping("/exchangeRate")
 public class ExchangeRateController {
 
     @Value("${rest.url}")

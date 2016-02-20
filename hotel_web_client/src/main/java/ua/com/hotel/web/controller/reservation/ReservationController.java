@@ -53,6 +53,7 @@ public class ReservationController {
                                       @RequestParam(defaultValue = "bill", required = false) final String sort,
                                       @RequestParam(defaultValue = EMPTY, required = false) final String filter,
                                       final Model model) {
+
         User user = getCurrentUser();
         Pageable pageable = new Pageable(page, perPage, sort, filter);
         PaginatedResults<Order> paginatedOrders = orderService.selectOrdersByUserId(user.getId(), pageable);
@@ -67,6 +68,7 @@ public class ReservationController {
     public String reservationShowRoom(@RequestParam final int roomId, final Model model) {
         model.addAttribute("roomId", roomId);
         model.addAttribute("status", "SAVE");
+
         return PAGE_RESERVATION;
     }
 

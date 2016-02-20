@@ -113,7 +113,6 @@
 
 			  <c:if test="${status == 'CONFIRM'}">
 				  $("#btn-convert").click(function() {
-					  var $self = this;
 					  $.ajax({
 						  type: "GET",
 						  url: "/exchangeRate/usd/" + ${order.bill},
