@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ua.com.hotel.dao.bookingrequest.BookingRequestDAO;
 import ua.com.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.hotel.model.entity.order.Order;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.service.bookingrequest.BookingRequestService;
 
 import java.util.List;
@@ -31,8 +34,11 @@ public class BookingRequestServiceImpl implements BookingRequestService {
     }
 
     @Override
-    public List<BookingRequest> selectBookingRequestsByUserId(int userId) {
-        return bookingRequestDAO.selectBookingRequestsByUserId(userId);
+    public PaginatedResults<BookingRequest> selectBookingRequestsByUserId(int userId, Pageable pageable) {
+        List<BookingRequest> bookingRequests = bookingRequestDAO.selectBookingRequestsByUserId(userId, pageable);
+        int totalCount = bookingRequestDAO.selectCountBookingRequestsByUserId(userId);
+        int numberOfPages = (totalCount / pageable.getPerPage()) + 1;
+        return new PaginatedResults<BookingRequest>(numberOfPages, totalCount, bookingRequests);
     }
 
     @Override

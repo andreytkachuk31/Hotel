@@ -15,12 +15,16 @@ import ua.com.hotel.model.entity.bookingrequest.BookingRequestStatus;
 import ua.com.hotel.model.entity.room.RoomCategory;
 import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.model.entity.user.UserPrincipal;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 import ua.com.hotel.service.bookingrequest.BookingRequestService;
 import ua.com.hotel.web.validator.client.BookingRequestValidator;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 /**
  * @since: 10.05.15
@@ -40,11 +44,17 @@ public class BookingRequestController {
     private BookingRequestService bookingRequestService;
 
     @RequestMapping(value="/showList", method = RequestMethod.GET)
-    public String showBookingRequests(final Model model) {
+    public String showBookingRequests(@RequestParam(defaultValue = "1") final int page,
+                                      @RequestParam(defaultValue = "10") final int perPage,
+                                      @RequestParam(defaultValue = "status", required = false) final String sort,
+                                      @RequestParam(defaultValue = EMPTY, required = false) final String filter,
+                                      final Model model) {
         User user = getCurrentUser();
-        List<BookingRequest> bookingRequests = bookingRequestService.selectBookingRequestsByUserId(user.getId());
+        Pageable pageable = new Pageable(page, perPage, sort, filter);
+        PaginatedResults<BookingRequest> paginatedBookingRequests = bookingRequestService.selectBookingRequestsByUserId(user.getId(), pageable);
 
-        model.addAttribute("bookingRequests", bookingRequests);
+        model.addAttribute("paginatedResults", paginatedBookingRequests);
+        model.addAttribute("pageable", pageable);
 
         return PAGE_BOOKING_REQUEST_LIST;
     }

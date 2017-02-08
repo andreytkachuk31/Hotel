@@ -85,14 +85,6 @@ public class BookingRequest implements Serializable {
         this.status = status;
     }
 
-    public String getCategoryName() {
-        return roomCategory.getName();
-    }
-
-    public String getBookingRequestStatusName() {
-        return status.getName();
-    }
-
     @Override
     public String toString() {
         return "BookingRequest {" +

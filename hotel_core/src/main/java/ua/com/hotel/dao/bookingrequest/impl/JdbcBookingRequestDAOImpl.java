@@ -8,11 +8,15 @@ import ua.com.hotel.dao.bookingrequest.BookingRequestDAO;
 import ua.com.hotel.model.entity.bookingrequest.BookingRequest;
 import ua.com.hotel.model.entity.bookingrequest.BookingRequestStatus;
 import ua.com.hotel.model.entity.user.User;
+import ua.com.hotel.model.pagination.Pageable;
 import ua.com.hotel.model.rowmapper.BookingRequestRowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
+import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * @since: 07.02.15
@@ -47,11 +51,34 @@ public class JdbcBookingRequestDAOImpl implements BookingRequestDAO {
     }
 
     @Override
-    public List<BookingRequest> selectBookingRequestsByUserId(int userId) {
+    public List<BookingRequest> selectBookingRequestsByUserId(int userId, Pageable pageable) {
+        int limit = pageable.getPerPage();
+        int offset = (pageable.getPage() - 1) * limit;
+        String sort = pageable.getSort();
+        String filter = pageable.getFilter();
+
+        StringBuilder orderBy = new StringBuilder(EMPTY);
+        if (isNotBlank(sort)) {
+            orderBy.append("ORDER BY " + sort + " ASC");
+        }
+        StringBuilder whereAnd = new StringBuilder(EMPTY);
+        if (isNotBlank(filter)) {
+            whereAnd.append("AND rooms_amount LIKE '%" + filter + "%'")
+                    .append(" OR status LIKE '%" + filter + "%'");
+        }
+
         return jdbcTemplate.query(
-                "SELECT * FROM booking_requests WHERE user_id=?",
-                new Object[]{userId},
+                "SELECT * FROM booking_requests WHERE user_id=? " + whereAnd + " " + orderBy + " LIMIT ? OFFSET ?",
+                new Object[]{userId, limit, offset},
                 new BookingRequestRowMapper());
+    }
+
+    @Override
+    public int selectCountBookingRequestsByUserId(int userId) {
+        return jdbcTemplate.queryForObject(
+                "SELECT COUNT(*) FROM booking_requests WHERE user_id=?",
+                new Object[]{userId},
+                Integer.class);
     }
 
     @Override

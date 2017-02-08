@@ -1,6 +1,7 @@
 package ua.com.hotel.dao.bookingrequest;
 
 import ua.com.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.hotel.model.pagination.Pageable;
 
 import java.util.List;
 
@@ -14,7 +15,9 @@ public interface BookingRequestDAO {
 
     BookingRequest selectBookingRequestsById(int id);
 
-    List<BookingRequest> selectBookingRequestsByUserId(int userId);
+    List<BookingRequest> selectBookingRequestsByUserId(int userId, Pageable pageable);
+
+    int selectCountBookingRequestsByUserId(int userId);
 
     List<BookingRequest> selectAllBookingRequests();
 

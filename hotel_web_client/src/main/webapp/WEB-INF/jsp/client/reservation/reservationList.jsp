@@ -8,9 +8,9 @@
 
 <layout:layout>
 
-    <div class="booking-request-show-all">
+    <div class="orders">
 
-        <div class="booking-request-show-all-header text-center">
+        <div class="orders-header text-center">
 
             <h1 class="page-name">
                 <spring:message code="orders"/>
@@ -24,7 +24,7 @@
 
         <hr/>
 
-        <div class="booking-request-show-all-body text-center">
+        <div class="orders-body text-center">
 
             <client:table pageable="${pageable}" paginatedResults="${paginatedResults}" uri="/reservation/showList">
 

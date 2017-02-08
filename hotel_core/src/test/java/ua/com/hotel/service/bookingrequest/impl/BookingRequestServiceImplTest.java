@@ -7,11 +7,14 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import ua.com.hotel.dao.bookingrequest.BookingRequestDAO;
 import ua.com.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -49,11 +52,11 @@ public class BookingRequestServiceImplTest {
     @Test
     public void shouldReturnBookingRequestWhenSelectBookingRequestsByUserId() {
         List<BookingRequest> bookingRequestsExpected = Arrays.asList(bookingRequest);
-        when(bookingRequestDAO.selectBookingRequestsByUserId(USER_ID)).thenReturn(bookingRequestsExpected);
+        when(bookingRequestDAO.selectBookingRequestsByUserId(USER_ID, any(Pageable.class))).thenReturn(bookingRequestsExpected);
 
-        List<BookingRequest> bookingRequestsActual = bookingRequestService.selectBookingRequestsByUserId(USER_ID);
+        PaginatedResults<BookingRequest> bookingRequestsActual = bookingRequestService.selectBookingRequestsByUserId(USER_ID, any(Pageable.class));
 
-        assertEquals(bookingRequestsExpected, bookingRequestsActual);
+        assertEquals(bookingRequestsExpected, bookingRequestsActual.getResults());
     }
 
     @Test

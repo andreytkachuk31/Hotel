@@ -1,6 +1,8 @@
 package ua.com.hotel.service.bookingrequest;
 
 import ua.com.hotel.model.entity.bookingrequest.BookingRequest;
+import ua.com.hotel.model.pagination.Pageable;
+import ua.com.hotel.model.pagination.PaginatedResults;
 
 import java.util.List;
 
@@ -14,7 +16,7 @@ public interface BookingRequestService {
 
     BookingRequest selectBookingRequestsById(int id);
 
-    List<BookingRequest> selectBookingRequestsByUserId(int userId);
+    PaginatedResults<BookingRequest> selectBookingRequestsByUserId(int userId, Pageable pageable);
 
     List<BookingRequest> selectAllBookingRequests();
 
