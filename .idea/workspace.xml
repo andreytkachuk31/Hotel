@@ -1,36 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Currencies.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/CurrencyType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Organization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Source.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_rest/src/main/resources/config/rest.properties" />
-      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\CurrencyRestController.java" afterPath="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/controller/ExchangeRateRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/bookingrequest/BookingRequestController.java" afterPath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/bookingrequest/BookingRequestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/home/HomeController.java" afterPath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/home/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" afterPath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/rooms/RoomsController.java" afterPath="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/rooms/RoomsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_rest/hotel_rest.iml" afterPath="$PROJECT_DIR$/hotel_rest/hotel_rest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/hotel_rest_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/hotel_rest_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_en.properties" afterPath="$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_ru.properties" afterPath="$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_rest/pom.xml" afterPath="$PROJECT_DIR$/hotel_rest/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp" afterPath="$PROJECT_DIR$/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_rest/src/main/resources/spring/springrest-config.xml" afterPath="$PROJECT_DIR$/hotel_rest/src/main/resources/spring/springrest-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel_web_common/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/hotel_web_common/src/main/webapp/resources/css/style.css" />
+    <list default="true" id="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" name="Default" comment="-more detailed dividing on modules">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_services/hotel_services.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel_web/hotel_web.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\hotel_core.iml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/hotel_core.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\pom.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\bookingrequest\BookingRequestDAO.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/bookingrequest/BookingRequestDAO.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\bookingrequest\impl\JdbcBookingRequestDAOImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/bookingrequest/impl/JdbcBookingRequestDAOImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\order\OrderDAO.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/order/OrderDAO.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\order\impl\JdbcOrderDAOImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/order/impl/JdbcOrderDAOImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\room\RoomDAO.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/room/RoomDAO.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\room\impl\JdbcRoomDAOImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/room/impl/JdbcRoomDAOImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\user\UserDAO.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/user/UserDAO.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\dao\user\impl\JdbcUserDAOImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/dao/user/impl/JdbcUserDAOImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\bookingrequest\BookingRequest.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/bookingrequest/BookingRequest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\bookingrequest\BookingRequestStatus.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/bookingrequest/BookingRequestStatus.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\order\Order.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/order/Order.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\room\Room.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/room/Room.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\room\RoomBusyStatus.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/room/RoomBusyStatus.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\room\RoomCategory.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/room/RoomCategory.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\user\User.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/user/User.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\user\UserPrincipal.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/user/UserPrincipal.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\user\UserRole.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/user/UserRole.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\entity\user\UserStatus.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/entity/user/UserStatus.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\exception\RoomAlreadyBookedException.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/exception/RoomAlreadyBookedException.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\exception\RoomException.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/exception/RoomException.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\exception\RoomNotFoundException.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/exception/RoomNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\pagination\Pageable.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/pagination/Pageable.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\pagination\PaginatedResults.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/pagination/PaginatedResults.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\rowmapper\BookingRequestRowMapper.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/rowmapper/BookingRequestRowMapper.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\rowmapper\OrderRowMapper.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/rowmapper/OrderRowMapper.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\rowmapper\RoomRowMapper.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/rowmapper/RoomRowMapper.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\model\rowmapper\UserRowMapper.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/model/rowmapper/UserRowMapper.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\bookingrequest\BookingRequestService.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/bookingrequest/BookingRequestService.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\bookingrequest\impl\BookingRequestServiceImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/bookingrequest/impl/BookingRequestServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\order\OrderService.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/order/OrderService.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\order\impl\OrderServiceImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/order/impl/OrderServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\room\RoomService.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/room/RoomService.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\room\impl\RoomServiceImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/room/impl/RoomServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\user\UserService.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/user/UserService.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\java\ua\com\hotel\service\user\impl\UserServiceImpl.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\db\data-access.properties" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/db/data-access.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\db\sql\initDB.sql" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/db/sql/initDB.sql" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\db\sql\populateDB.sql" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/db/sql/populateDB.sql" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\ehcache\ehcache.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/ehcache/ehcache.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\spring\spring-cache-config.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/spring/spring-cache-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\spring\spring-core-config.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/spring/spring-core-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\main\resources\spring\spring-db-config.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/main/resources/spring/spring-db-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\test\java\ua\com\hotel\service\bookingrequest\impl\BookingRequestServiceImplTest.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/test/java/ua/com/hotel/service/bookingrequest/impl/BookingRequestServiceImplTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\test\java\ua\com\hotel\service\order\impl\OrderServiceImplTest.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/test/java/ua/com/hotel/service/order/impl/OrderServiceImplTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\test\java\ua\com\hotel\service\room\impl\RoomServiceImplTest.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/test/java/ua/com/hotel/service/room/impl/RoomServiceImplTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_core\src\test\java\ua\com\hotel\service\user\impl\UserServiceImplTest.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_core/src/test/java/ua/com/hotel/service/user/impl/UserServiceImplTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\hotel_rest.iml" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/hotel_rest.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\pom.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\controller\ExchangeRateController.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/controller/ExchangeRateController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\model\Currencies.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/model/Currencies.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\model\CurrencyType.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/model/CurrencyType.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\model\Organization.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/model/Organization.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\java\ua\com\hotel\rest\model\Source.java" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/model/Source.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\resources\config\rest.properties" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/resources/config/rest.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\resources\spring\springrest-config.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/resources/spring/springrest-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_rest\src\main\webapp\WEB-INF\web.xml" afterPath="$PROJECT_DIR$/hotel_services/hotel_rest/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\hotel_web_admin.iml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/hotel_web_admin.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\pom.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\java\ua\com\hotel\web\controller\home\AdminHomeController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/java/ua/com/hotel/web/controller/home/AdminHomeController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\java\ua\com\hotel\web\controller\room\AdminRoomController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/java/ua/com/hotel/web/controller/room/AdminRoomController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\java\ua\com\hotel\web\controller\users\AdminUserController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/java/ua/com/hotel/web/controller/users/AdminUserController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\java\ua\com\hotel\web\validator\AdminUserValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/java/ua/com/hotel/web/validator/AdminUserValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\jsp\admin\home\home.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/jsp/admin/home/home.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\jsp\admin\rooms\roomList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/jsp/admin/rooms/roomList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\jsp\admin\users\user.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/jsp/admin/users/user.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\jsp\admin\users\userList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/jsp/admin/users/userList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\jsp\admin\users\userSuccess.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/jsp/admin/users/userSuccess.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_admin\src\main\webapp\WEB-INF\tags\admin\menu.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_admin/src/main/webapp/WEB-INF/tags/admin/menu.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\hotel_web_client.iml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/hotel_web_client.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\pom.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\ajax\ExchangeRateController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/ajax/ExchangeRateController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\controller\bookingrequest\BookingRequestController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/bookingrequest/BookingRequestController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\controller\home\HomeController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/home/HomeController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\controller\reservation\ReservationController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\controller\rooms\RoomsController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/rooms/RoomsController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\validator\BookingRequestValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/validator/BookingRequestValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\validator\LoginValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/validator/LoginValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\validator\ReqistrationValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/validator/ReqistrationValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\java\ua\com\hotel\web\validator\ReservationValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/validator/ReservationValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\bookingRequest\bookingRequest.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/bookingRequest/bookingRequest.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\bookingRequest\bookingRequestList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/bookingRequest/bookingRequestList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\bookingRequest\bookingRequestSuccess.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/bookingRequest/bookingRequestSuccess.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\home\home.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/home/home.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\reservation\reservation.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\reservation\reservationList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservationList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\jsp\client\rooms\freeRooms.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/rooms/freeRooms.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\tags\client\menu.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/tags/client/menu.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\tags\client\pagination.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/tags/client/pagination.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\tags\client\search.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/tags/client/search.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\main\webapp\WEB-INF\tags\client\table.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/tags/client/table.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\test\java\ua\com\hotel\web\handler\AuthenticationFailureHandlerTest.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/test/java/ua/com/hotel/web/handler/AuthenticationFailureHandlerTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\test\java\ua\com\hotel\web\handler\AuthenticationSuccessHandlerTest.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/test/java/ua/com/hotel/web/handler/AuthenticationSuccessHandlerTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\test\java\ua\com\hotel\web\validator\client\LoginValidatorTest.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/test/java/ua/com/hotel/web/validator/client/LoginValidatorTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_client\src\test\java\ua\com\hotel\web\validator\client\ReqistrationValidatorTest.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/test/java/ua/com/hotel/web/validator/client/ReqistrationValidatorTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\hotel_web_common.iml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/hotel_web_common.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\pom.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\controller\authorization\LoginController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/LoginController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\controller\authorization\MLoginController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/MLoginController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\controller\authorization\RegistrationController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/RegistrationController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\controller\error\ErrorController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/controller/error/ErrorController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\handler\AuthenticationFailureHandler.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/handler/AuthenticationFailureHandler.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\handler\AuthenticationSuccessHandler.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/handler/AuthenticationSuccessHandler.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\listener\ContextListener.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/listener/ContextListener.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\java\ua\com\hotel\web\validator\ReqistrationValidator.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/validator/ReqistrationValidator.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\config\web.properties" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/config/web.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\i18n\messages_en.properties" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/i18n/messages_en.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\i18n\messages_ru.properties" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/i18n/messages_ru.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\spring\spring-rest-config.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/spring/spring-rest-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\spring\spring-security-config.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/spring/spring-security-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\resources\spring\springmvc-config.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/spring/springmvc-config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\jsp\authorization\login.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/authorization/login.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\jsp\authorization\mlogin.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/authorization/mlogin.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\jsp\authorization\registration.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/authorization/registration.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\jsp\error\error.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/error/error.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\jsp\error\error403.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/error/error403.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\log4j.properties" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/log4j.properties" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\tags\layout\footer.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/tags/layout/footer.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\tags\layout\header.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/tags/layout/header.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\tags\layout\layout.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/tags/layout/layout.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\tags\layout\locale.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/tags/layout/locale.tag" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\WEB-INF\web.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\css\jquery-ui.css" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/css/jquery-ui.css" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\css\style.css" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/css/style.css" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\Thumbs.db" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/Thumbs.db" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\cal-icon.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/cal-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\det_pic.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/det_pic.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\error.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/error.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/glyphicons-halflings-white.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\glyphicons-halflings.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/glyphicons-halflings.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\home.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/home.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\icon5.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/icon5.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\loginArrow.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/loginArrow.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\logo.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/logo.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\nav-icon.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/nav-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\nav_icon.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/nav_icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\next.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/next.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\s_icons.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/s_icons.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic1.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic1.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic2.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic2.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic3.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic3.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic4.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic4.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic5.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic5.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic6.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic6.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic7.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic7.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\ser_pic8.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/ser_pic8.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\slider-bg.jpg" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/slider-bg.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\sliderarrows.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/sliderarrows.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\images\soc_icons.png" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/images/soc_icons.png" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\js\bootstrap.min.js" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\js\jquery-ui.min.js" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/js/jquery-ui.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_common\src\main\webapp\resources\js\jquery.min.js" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/js/jquery.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\hotel_web_manager.iml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/hotel_web_manager.iml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\pom.xml" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\java\ua\com\hotel\web\controller\bookingrequest\BookingRequestProcessController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/java/ua/com/hotel/web/controller/bookingrequest/BookingRequestProcessController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\java\ua\com\hotel\web\controller\home\ManagerHomeController.java" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/java/ua/com/hotel/web/controller/home/ManagerHomeController.java" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\webapp\WEB-INF\jsp\manager\bookingRequest\bookingRequestProcessSuccess.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/webapp/WEB-INF/jsp/manager/bookingRequest/bookingRequestProcessSuccess.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\webapp\WEB-INF\jsp\manager\bookingRequest\bookingRequestsProcessList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/webapp/WEB-INF/jsp/manager/bookingRequest/bookingRequestsProcessList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\webapp\WEB-INF\jsp\manager\bookingRequest\findingRoomList.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/webapp/WEB-INF/jsp/manager/bookingRequest/findingRoomList.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\webapp\WEB-INF\jsp\manager\home\home.jsp" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/webapp/WEB-INF/jsp/manager/home/home.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web_manager\src\main\webapp\WEB-INF\tags\manager\menu.tag" afterPath="$PROJECT_DIR$/hotel_web/hotel_web_manager/src/main/webapp/WEB-INF/tags/manager/menu.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="4a6c7644-9bf2-47a7-bc03-b2915b00e972" name="trash" comment="" />
+    <list id="4a6c7644-9bf2-47a7-bc03-b2915b00e972" name="trash" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ua_com_hotel_web_common_classes_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ua_com_hotel_web_common_war_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/web_common_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/web_common_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    </list>
     <ignored path="Hotel.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
-    <file path="/Dummy.txt" changelist="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" time="1455223459471" ignored="false" />
+    <file path="/Dummy.txt" changelist="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" time="1497905287378" ignored="false" />
     <file path="/pom.xml" changelist="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" time="1454777966138" ignored="false" />
     <file path="/CurrencyRestController.java" changelist="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" time="1454362097280" ignored="false" />
     <file path="/springrest-config.xml" changelist="fa056caa-2112-48f9-b7fd-5d6c14e9c7e3" time="1454772641557" ignored="false" />
@@ -112,7 +263,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Source.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Source.java">
+        <entry file="file://$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/model/Source.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="13" column="24" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
               <folding />
@@ -120,37 +271,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReservationController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java">
+      <file leaf-file-name="ReservationController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="52" selection-start="2911" selection-end="2911" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reservation.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="44" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-3.9230769">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-security-config.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/resources/spring/spring-security-config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="6" selection-start="818" selection-end="818" vertical-scroll-proportion="0.26779026">
+            <state line="36" column="29" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.33452594">
               <folding />
             </state>
           </provider>
@@ -174,13 +298,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Organization.java" />
         <option value="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/CurrencyType.java" />
         <option value="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/Currency.java" />
         <option value="$PROJECT_DIR$/hotel_rest/pom.xml" />
         <option value="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/model/request/Organization.java" />
         <option value="$PROJECT_DIR$/hotel_rest/src/main/java/ua/com/hotel/rest/controller/ExchangeRateRestController.java" />
-        <option value="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" />
         <option value="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/home/HomeController.java" />
         <option value="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/bookingrequest/BookingRequestController.java" />
         <option value="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/rooms/RoomsController.java" />
@@ -190,6 +312,8 @@
         <option value="$PROJECT_DIR$/hotel_web_common/src/main/webapp/resources/css/style.css" />
         <option value="$PROJECT_DIR$/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp" />
         <option value="$PROJECT_DIR$/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" />
+        <option value="$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java" />
       </list>
     </option>
   </component>
@@ -214,7 +338,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1376" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -245,6 +369,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,208 +389,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,12 +409,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -501,11 +427,11 @@
       <recent name="ua.com.hotel.rest.model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_web" />
+      <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\hotel_services" />
       <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\src\main\webapp\WEB-INF\tags\manager" />
       <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\src\main\webapp\WEB-INF\tags\client" />
       <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\src\main\webapp\WEB-INF\tags\admin" />
-      <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\src\main\webapp\WEB-INF\tags\layout\manager" />
-      <recent name="C:\Users\Андрей\IdeaProjects\MyProject\Hotel\src\main\webapp\WEB-INF\tags\layout\admin" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat7">
@@ -557,6 +483,19 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -571,19 +510,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -1027,10 +953,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33030304" sideWeight="0.6" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33028919" sideWeight="0.6" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1047,10 +973,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5589744" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2090909" sideWeight="0.6" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20852359" sideWeight="0.6" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1139,12 +1065,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/rooms/RoomsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/webapp/WEB-INF/jsp/authorization/login.jsp">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/WEB-INF/jsp/authorization/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="65" selection-start="688" selection-end="688" vertical-scroll-proportion="-7.8461537">
           <folding />
@@ -1166,7 +1087,7 @@
         <state line="34" column="0" selection-start="2399" selection-end="2399" vertical-scroll-proportion="0.73170733" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_en.properties">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/i18n/messages_en.properties">
       <provider selected="true" editor-type-id="ResourceBundle">
         <state />
       </provider>
@@ -1174,7 +1095,7 @@
         <state line="53" column="31" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/resources/i18n/messages_ru.properties">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/i18n/messages_ru.properties">
       <provider editor-type-id="ResourceBundle">
         <state />
       </provider>
@@ -1182,47 +1103,24 @@
         <state line="53" column="35" selection-start="1372" selection-end="1372" vertical-scroll-proportion="0.62" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/webapp/resources/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="84732" selection-start="84940" selection-end="84952" vertical-scroll-proportion="0.4738676" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/webapp/resources/css/style.css">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/webapp/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="178" column="1" selection-start="2715" selection-end="2727" vertical-scroll-proportion="0.47692308" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp">
+    <entry file="file://$PROJECT_DIR$/hotel_services/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="44" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-3.9230769">
-          <folding />
-        </state>
+        <state line="105" column="99" selection-start="3173" selection-end="3173" vertical-scroll-proportion="0.3847619" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="52" selection-start="2911" selection-end="2911" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_core/src/main/java/ua/com/hotel/service/user/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="99" selection-start="3173" selection-end="3173" vertical-scroll-proportion="0.3847619">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/java/ua/com/hotel/web/handler/AuthenticationSuccessHandler.java">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/handler/AuthenticationSuccessHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="16" selection-start="857" selection-end="857" vertical-scroll-proportion="0.45333335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1234,9 +1132,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel_web_common/src/main/resources/spring/spring-security-config.xml">
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/resources/spring/spring-security-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="818" selection-end="818" vertical-scroll-proportion="0.26779026">
+        <state line="19" column="56" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.15917604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/webapp/WEB-INF/jsp/client/reservation/reservation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="44" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.03269231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_common/src/main/java/ua/com/hotel/web/controller/authorization/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="279" selection-end="279" vertical-scroll-proportion="0.1824687">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel_services/hotel_rest/src/main/java/ua/com/hotel/rest/controller/ExchangeRateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="34" selection-start="572" selection-end="572" vertical-scroll-proportion="0.27370304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel_web/hotel_web_client/src/main/java/ua/com/hotel/web/controller/reservation/ReservationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="29" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.33452594">
           <folding />
         </state>
       </provider>

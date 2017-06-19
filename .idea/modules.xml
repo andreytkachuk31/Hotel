@@ -3,13 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Hotel.iml" filepath="$PROJECT_DIR$/Hotel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_core/hotel_core.iml" filepath="$PROJECT_DIR$/hotel_core/hotel_core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_rest/hotel_rest.iml" filepath="$PROJECT_DIR$/hotel_rest/hotel_rest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_web_admin/hotel_web_admin.iml" filepath="$PROJECT_DIR$/hotel_web_admin/hotel_web_admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_web_all/hotel_web_all.iml" filepath="$PROJECT_DIR$/hotel_web_all/hotel_web_all.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_web_client/hotel_web_client.iml" filepath="$PROJECT_DIR$/hotel_web_client/hotel_web_client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_web_common/hotel_web_common.iml" filepath="$PROJECT_DIR$/hotel_web_common/hotel_web_common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotel_web_manager/hotel_web_manager.iml" filepath="$PROJECT_DIR$/hotel_web_manager/hotel_web_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_services/hotel_core/hotel_core.iml" filepath="$PROJECT_DIR$/hotel_services/hotel_core/hotel_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_services/hotel_rest/hotel_rest.iml" filepath="$PROJECT_DIR$/hotel_services/hotel_rest/hotel_rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_services/hotel_services.iml" filepath="$PROJECT_DIR$/hotel_services/hotel_services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_web/hotel_web.iml" filepath="$PROJECT_DIR$/hotel_web/hotel_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_web/hotel_web_admin/hotel_web_admin.iml" filepath="$PROJECT_DIR$/hotel_web/hotel_web_admin/hotel_web_admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_web/hotel_web_client/hotel_web_client.iml" filepath="$PROJECT_DIR$/hotel_web/hotel_web_client/hotel_web_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_web/hotel_web_common/hotel_web_common.iml" filepath="$PROJECT_DIR$/hotel_web/hotel_web_common/hotel_web_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel_web/hotel_web_manager/hotel_web_manager.iml" filepath="$PROJECT_DIR$/hotel_web/hotel_web_manager/hotel_web_manager.iml" />
     </modules>
   </component>
 </project>

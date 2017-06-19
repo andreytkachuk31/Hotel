@@ -10,13 +10,12 @@
     <version>1.0</version>
 
     <modules>
-        <module>hotel_core</module>
-        <module>hotel_rest</module>
-        <module>hotel_web_common</module>
-        <module>hotel_web_admin</module>
-        <module>hotel_web_manager</module>
-        <module>hotel_web_client</module>
-        <module>hotel_web_all</module>
+        <module>hotel_services/hotel_core</module>
+        <module>hotel_services/hotel_rest</module>
+        <module>hotel_web/hotel_web_common</module>
+        <module>hotel_web/hotel_web_admin</module>
+        <module>hotel_web/hotel_web_client</module>
+        <module>hotel_web/hotel_web_manager</module>
     </modules>
 
     <properties>
