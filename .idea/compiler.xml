@@ -27,16 +27,9 @@
         <module name="core" />
         <module name="hotel_admin" />
         <module name="hotel_client" />
-        <module name="hotel_core" />
         <module name="hotel_manager" />
         <module name="hotel_release" />
-        <module name="hotel_rest" />
-        <module name="hotel_web" />
-        <module name="hotel_web_admin" />
         <module name="hotel_web_all" />
-        <module name="hotel_web_client" />
-        <module name="hotel_web_common" />
-        <module name="hotel_web_manager" />
         <module name="hotel_web_release" />
         <module name="manager" />
       </profile>
