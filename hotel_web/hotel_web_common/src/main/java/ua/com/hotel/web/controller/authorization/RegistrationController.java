@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.com.hotel.model.entity.user.User;
 import ua.com.hotel.service.user.UserService;
-import ua.com.hotel.web.validator.ReqistrationValidator;
+import ua.com.hotel.web.validator.RegistrationValidator;
 
 import javax.servlet.http.HttpSession;
 
@@ -24,13 +24,16 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RegistrationValidator registrationValidator;
+
     @RequestMapping(method = RequestMethod.GET)
-    public String showReqistrationPage() {
+    public String showRegistrationPage() {
         return PAGE_REGISTRATION;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String reqistration(@RequestParam("first_name") final String firstName,
+    public String registration(@RequestParam("first_name") final String firstName,
                                @RequestParam("last_name") final String lastName,
                                @RequestParam("login") final String login,
                                @RequestParam("password") final String password,
@@ -41,7 +44,7 @@ public class RegistrationController {
         LOG.trace("Request parameter: lastName --> " + lastName);
         LOG.trace("Request parameter: login --> " + login);
 
-        String errorMessage = new ReqistrationValidator().validate(firstName, lastName, login, password,  passwordConf, userService.isUserExist(login));
+        final String errorMessage = this.registrationValidator.validate(firstName, lastName, login, password, passwordConf);
 
         if (StringUtils.isNotBlank(errorMessage)) {
             session.setAttribute("error", errorMessage);

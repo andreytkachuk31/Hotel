@@ -11,7 +11,7 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
  */
 public class LoginValidator {
 
-    private static final Logger LOG = Logger.getLogger(ReqistrationValidator.class);
+    private static final Logger LOG = Logger.getLogger(LoginValidator.class);
 
     public String validate(String login, String password) {
         if (StringUtils.isBlank(login)) {
