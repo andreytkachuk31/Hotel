@@ -60,6 +60,9 @@
                                 <spring:message code="login"/>
                             </th>
                             <th class="sorting" style="width: 108px;">
+                                <spring:message code="fail.login.attempt"/>
+                            </th>
+                            <th class="sorting" style="width: 108px;">
                                 <spring:message code="status"/>
                             </th>
                             <th class="sorting" style="width: 108px;">
@@ -76,9 +79,10 @@
                                 <td class="center">${user.firstName}</td>
                                 <td class="center">${user.lastName}</td>
                                 <td class="center">${user.login}</td>
+                                <td class="center">${user.failLoginAttempt}</td>
                                 <td class="center">${user.statusName}</td>
                                 <td class="center">${user.roleName}</td>
-                                <td class="center" width="20%">
+                                <td class="center" width="25%">
                                     <a href="/admin/users/show?id=${user.id}">
                                         <button class="btn btn-sm btn-primary">
                                             Edit

@@ -1,10 +1,10 @@
 USE hotel;
 
-INSERT INTO users VALUES(1, 'petrov','petrov','Petrov','Petr', 3, 1);
-INSERT INTO users VALUES(2, 'ivanov','ivanov','Ivanov','Ivan', 3, 1);
-INSERT INTO users VALUES(3, 'sidorov','sidorov','Sidorov','Aleksandr', 3, 1);
-INSERT INTO users VALUES(4, 'manager','manager','Tkachuk','Andrii', 2, 1);
-INSERT INTO users VALUES(5, 'admin','admin','Geichenko','Iegor', 1, 1);
+INSERT INTO users VALUES(1, 'petrov','petrov','Petrov','Petr', 0, 3, 1);
+INSERT INTO users VALUES(2, 'ivanov','ivanov','Ivanov','Ivan', 0, 3, 1);
+INSERT INTO users VALUES(3, 'sidorov','sidorov','Sidorov','Aleksandr', 0, 3, 1);
+INSERT INTO users VALUES(4, 'manager','manager','Tkachuk','Andrii', 0, 2, 1);
+INSERT INTO users VALUES(5, 'admin','admin','Geichenko','Iegor', 0, 1, 1);
 
 INSERT INTO user_roles VALUES (1, 'ROLE_ADMIN');
 INSERT INTO user_roles VALUES (2, 'ROLE_MANAGER');

@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
   password VARCHAR(45) NOT NULL,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(45) NOT NULL,
+  fail_login_attempt INT DEFAULT 0,
   role_id INT NOT NULL,
   status_id INT NOT NULL DEFAULT 1,
   PRIMARY KEY (id),

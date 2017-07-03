@@ -103,16 +103,38 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public void increaseFailLoginAttempt(int id) {
+        User user = selectUserById(id);
+        user.setFailLoginAttempt(user.getFailLoginAttempt() + 1);
+        userDAO.updateUser(user);
+    }
+
+    @Override
+    public void invalidateFailLoginAttempt(int id) {
+        User user = selectUserById(id);
+        user.setFailLoginAttempt(0);
+        userDAO.updateUser(user);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
         User user = selectUserByLogin(username);
 
-        if (user == null || !user.isActive())
-            throw new UsernameNotFoundException("User isn't exist or isn't active");
+        if (user == null) {
+            throw new UsernameNotFoundException(String.format("User with login '%s' isn't exist", username));
+        }
 
         return buildUserPrincipalFromUser(user);
     }
 
     private UserPrincipal buildUserPrincipalFromUser(User user) {
-        return new UserPrincipal(user, user.getLogin(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole().name())));
+        return new UserPrincipal(user,
+                user.getLogin(),
+                user.getPassword(),
+                user.isActive(),
+                true,
+                true,
+                !user.isBlocked(),
+                Arrays.asList(new SimpleGrantedAuthority(user.getRole().name())));
     }
 }

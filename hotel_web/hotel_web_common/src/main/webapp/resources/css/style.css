@@ -40,7 +40,7 @@
 /* Customize the navbar links to be fill the entire space of the .navbar */
 .navbar .nav li {
     display: table-cell;
-    width: 210px;
+    width: 200px;
 }
 
 /*override bootstrap*/

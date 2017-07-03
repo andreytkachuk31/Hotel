@@ -18,6 +18,8 @@ import java.io.IOException;
  */
 public class AuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
+    private static final int MAX_FAIL_LOGIN_ATTEMPT = 5;
+
     @Autowired
     private UserService userService;
 
@@ -33,6 +35,16 @@ public class AuthenticationFailureHandler extends SimpleUrlAuthenticationFailure
             errorCode = "1001";
         } else if (user.isDeleted()) {
             errorCode = "1002";
+        } else {
+            errorCode = "1003"; // password wrong
+            int userId = user.getId();
+            if (user.getFailLoginAttempt() >= MAX_FAIL_LOGIN_ATTEMPT) {
+                userService.blockUser(userId);
+                userService.invalidateFailLoginAttempt(userId);
+                errorCode = "1001";
+            } else {
+                userService.increaseFailLoginAttempt(userId);
+            }
         }
 
         setDefaultFailureUrl("/mlogin?errorCode=" + errorCode);

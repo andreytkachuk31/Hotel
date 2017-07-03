@@ -17,6 +17,7 @@ public class User implements Serializable {
     private String password;
     private String firstName;
     private String lastName;
+    private int failLoginAttempt;
     private UserRole role;
     private UserStatus status;
 
@@ -58,6 +59,14 @@ public class User implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getFailLoginAttempt() {
+        return failLoginAttempt;
+    }
+
+    public void setFailLoginAttempt(int failLoginAttempt) {
+        this.failLoginAttempt = failLoginAttempt;
     }
 
     public UserRole getRole() {

@@ -52,9 +52,10 @@ public class JdbcUserDAOImpl implements UserDAO {
     @Override
     public void updateUser(User user) {
         jdbcTemplate.update(
-                "UPDATE users SET first_name=?, last_name=?, role_id=?, status_id=? WHERE id=?",
+                "UPDATE users SET first_name=?, last_name=?, fail_login_attempt=?, role_id=?, status_id=? WHERE id=?",
                 user.getFirstName(),
                 user.getLastName(),
+                user.getFailLoginAttempt(),
                 user.getRole().getRoleId(),
                 user.getStatus().getStatusId(),
                 user.getId());

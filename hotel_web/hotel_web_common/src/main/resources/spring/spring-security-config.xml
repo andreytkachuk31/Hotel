@@ -25,7 +25,7 @@
 
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
         <intercept-url pattern="/manager/**" access="ROLE_MANAGER"/>
-        <intercept-url pattern="/ua/com/hotel/web/validator" access="ROLE_CLIENT"/>
+        <intercept-url pattern="/**" access="ROLE_CLIENT"/>
 
         <csrf disabled="true"/>
 

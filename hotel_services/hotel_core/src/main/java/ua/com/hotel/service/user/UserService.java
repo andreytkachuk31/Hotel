@@ -31,5 +31,9 @@ public interface UserService {
 
     void unBlockUser(int id);
 
+    void increaseFailLoginAttempt(int id);
+
+    void invalidateFailLoginAttempt(int id);
+
     boolean isUserExist(String login);
 }
